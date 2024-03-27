@@ -1,7 +1,7 @@
 ##### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
 <br>
-
-1. **Check Compatibility:** Ensure your device supports GSI and unlock bootloader.
+[Samsung user please check before starting](#samsung-devices)
+1. **Check Compatibility:** Ensure your device supports GSI and [unlock bootloader](https://github.com/mkr-infinity/Guide-to-unlocking-bootloader).
 2. **Download GSI:** Get the compatible GSI file for your device.
 3. **Install ADB and Fastboot:** Set up Android Debug Bridge (ADB) and Fastboot on your computer.
 4. **Backup Data:** Back up important data on your device as flashing may erase data.
@@ -45,7 +45,8 @@ fastboot flash system GSI-FILENAME.img
 ```
 👆Here also remove ```GSI-FILENAME.img``` and drag and drop the ```gsi .img``` file <br>
 
-If fastboot tells you there isn't enough place, you can try to delete ```product/system_ext partitions```. I recommend flash an empty image on thems to avoid problems with magisk.
+If fastboot tells you there isn't enough place, you can try to delete ```product/system_ext partitions```.  <br>
+I recommend flash an empty image on thems to avoid problems with magisk.
 ```
 fastboot flash product placebo.img
 fastboot flash system_ext placebo.img
@@ -55,7 +56,7 @@ And try to flash GSI again (step 5)
 
 7. Go back to recovery, command  `fastboot reboot recovery` then perform "Factory reset / Wipe data"
 
-8. Reboot and enjoy. <br>
+8. Reboot and enjoy😇🥳. <br>
 
 >[!TIP]
 >FIRST USE OFFLINE SET-UP MODE.
