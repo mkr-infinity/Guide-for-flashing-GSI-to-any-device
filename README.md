@@ -1,7 +1,7 @@
 ##### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
 <br>
 
-1. **Check Compatibility:** Ensure your device supports GSI and unlock bootloader if needed.
+1. **Check Compatibility:** Ensure your device supports GSI and unlock bootloader.
 2. **Download GSI:** Get the compatible GSI file for your device.
 3. **Install ADB and Fastboot:** Set up Android Debug Bridge (ADB) and Fastboot on your computer.
 4. **Backup Data:** Back up important data on your device as flashing may erase data.
