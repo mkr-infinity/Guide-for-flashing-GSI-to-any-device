@@ -83,8 +83,10 @@ Boot it and select enter fastboot (fastbootd) <br>
 adb reboot bootloader
 fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 fastboot reboot fastboot
+fastboot delete-logical-partition product 
 fastboot flash system system.img
 ```
+👆I am writing these commands for myself not for everyone.
 
 #### You can join these telegram groups for help.
 [Lenovo TB-X306X](https://t.me/lenovotbx306xchat) 👈 join this for GSI and suppor. <br>
