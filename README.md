@@ -1,6 +1,8 @@
 ##### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
 <br>
+
 [Samsung user please check before starting](#samsung-devices)
+
 1. **Check Compatibility:** Ensure your device supports GSI and [unlock bootloader](https://github.com/mkr-infinity/Guide-to-unlocking-bootloader).
 2. **Download GSI:** Get the compatible GSI file for your device.
 3. **Install ADB and Fastboot:** Set up Android Debug Bridge (ADB) and Fastboot on your computer.
