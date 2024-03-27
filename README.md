@@ -44,6 +44,7 @@ fastboot flash system GSI-FILENAME.img
 
 ```
 👆Here also remove ```GSI-FILENAME.img``` and drag and drop the ```gsi .img``` file <br>
+
 If fastboot tells you there isn't enough place, you can try to delete ```product/system_ext partitions```. I recommend flash an empty image on thems to avoid problems with magisk.
 ```
 fastboot flash product placebo.img
@@ -61,9 +62,8 @@ And try to flash GSI again (step 5)
 
 
 
-##########
 
-SAMSUNG DEVICES
+## SAMSUNG DEVICES
 
 Vbmeta must be flashed trough Odin/Heimdall and isn't required to boot for some devices.
 
