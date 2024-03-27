@@ -1,4 +1,4 @@
-##### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
+### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
 <br>
 
 [Samsung user please check before starting](#samsung-devices)
