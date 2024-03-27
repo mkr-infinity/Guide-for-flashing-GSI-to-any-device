@@ -74,4 +74,31 @@ Requires patched recovery to access fastbootd
 https://github.com/Johx22/Patch-Recovery
 
 Flash it through Odin/Heimdall.
-Boot it and select enter fastboot (fastbootd)
+Boot it and select enter fastboot (fastbootd) <br>
+
+
+
+#### All commands used for..💁‍♂️
+```
+adb reboot bootloader
+fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+fastboot reboot fastboot
+fastboot flash system system.img
+```
+
+#### You can join these telegram groups for help.
+[Lenovo TB-X306X](https://t.me/lenovotbx306xchat) 👈 join this for GSI and suppor. <br>
+[Premium MODZ](https://t.me/mkrinfinity) 👈 join this for premium apk for free.
+
+#### Connect with me🇮🇳.
+<div id="badges">
+  <a href="https://www.instagram.com/mkr_infinity/">
+    <img src="https://img.shields.io/badge/Instagram-red?style=for-the-badge&logo=Instagram&logoColor=blue" alt="Instagram Badge"/>
+  </a>  
+</div>
+
+<div id="badges">
+  <a href="https://t.me/mkr_infinity">
+    <img src="https://img.shields.io/badge/Telegram-red?style=for-the-badge&logo=telegram&logoColor=blue" alt="Instagram Badge"/>
+  </a>  
+</div>
