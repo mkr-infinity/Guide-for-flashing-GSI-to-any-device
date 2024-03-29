@@ -2,7 +2,12 @@
 <br>
 
 >[!WARNING]
->First check if your device is project treble supported or not by this app
+>First check if your device is project treble supported or not by [this app](https://play.google.com/store/apps/details?id=tk.hack5.treblecheck). <br>
+if it supporteed like this , then only proceed to next.
+>If project treble is mot supported then don't try this.
+
+
+
 
 [Samsung user please check before starting](#samsung-devices)
 
