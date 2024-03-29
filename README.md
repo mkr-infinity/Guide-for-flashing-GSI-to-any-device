@@ -2,7 +2,7 @@
 <br>
 
 >[!WARNING]
->First check if your device is project treble supported or not by [this app](https://play.google.com/store/apps/details?id=tk.hack5.treblecheck). <br>
+>First check if your device is project treble supported or not by [Treble Check App](https://play.google.com/store/apps/details?id=tk.hack5.treblecheck). <br>
 if it supporteed like this 😇
 >![IMG_20240329_135907_489.jpg](https://github.com/mkr-infinity/Guide-to-unlocking-bootloader/assets/125804924/795d0bdc-e315-442c-a12d-f20d6292825e) then only proceed to next.
 >If project treble is not supported then don't try this.
