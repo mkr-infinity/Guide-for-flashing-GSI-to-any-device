@@ -1,5 +1,8 @@
-### Another guide by KAIF for flashing a GSI image file to any of your ANDROID Device that is compitable with it.
+### Another guide by KAIF for flashing a GSI image file to any of your ofcourse 😅 ANDROID Devices ios users regret 😂.
 <br>
+
+>[!WARNING]
+>First check if your device is project treble supported or not by this app
 
 [Samsung user please check before starting](#samsung-devices)
 
