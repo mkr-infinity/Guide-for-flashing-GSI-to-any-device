@@ -68,9 +68,9 @@ fastboot flash system GSI-FILENAME.img
 
 >[!NOTE]
 >After this commnad this will take approx. 5 minutes to show something like 1/13 or 1/something . <br>
-please be patient untill all completed , Do not press any button and anything just to avoid errors.
-<br>
-this process takes 15 or 20 mintes to complete the system flash.
+>please be patient untill all completed , Do not press any button and anything just to avoid errors.<br>
+>this process takes 15 or 20 mintes to complete the system flash.<br>
+
 7. Go back to recovery, command  `fastboot reboot recovery` then perform "Factory reset / Wipe data"
 
 8. Reboot and enjoy😇🥳. <br>
