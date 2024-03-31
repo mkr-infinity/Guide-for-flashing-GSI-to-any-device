@@ -66,6 +66,9 @@ fastboot flash system GSI-FILENAME.img
 ```
 👆Here also remove ```GSI-FILENAME.img``` and drag and drop the ```gsi .img``` file <br>
 
+>[!NOTE]
+>After this commnad this will take approx. 5 minutes to show something like 1/13 or 1/something . <br>
+please be patient untill all completed , Do not press any button and anything just to avoid errors.
 
 7. Go back to recovery, command  `fastboot reboot recovery` then perform "Factory reset / Wipe data"
 
