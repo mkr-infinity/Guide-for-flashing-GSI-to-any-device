@@ -65,7 +65,8 @@ fastboot flash system GSI-FILENAME.img
 
 ```
 👆Here also remove ```GSI-FILENAME.img``` and drag and drop the ```gsi .img``` file <br>
-
+After 3 minutes or 5 minutes later you  can see count as 1/13 or like this👇👇👇 <br>
+then wait untill this process complets.![Fastboot flash system system.img.png](https://github.com/mkr-infinity/Guide-to-unlocking-bootloader/assets/125804924/636a3fcf-4bc1-44db-85fb-2f6e42661455)
 >[!NOTE]
 >After this commnad this will take approx. 5 minutes to show something like 1/13 or 1/something . <br>
 >please be patient untill all completed , Do not press any button and anything just to avoid errors.<br>
