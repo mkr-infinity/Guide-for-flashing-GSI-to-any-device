@@ -26,7 +26,7 @@ arm64: ARM 64-bit
 ```
 
 
-### Another guide by KAIF for flashing a GSI image file to any of your ofcourse 😅 ANDROID Devices ios users regret 😂.
+### Another guide by KAIF for flashing a GSI image file to any of your ofcourse 😅 ANDROID Devices ios users regret 😂.(don't mind i bunked my English classes)
 <br>
 
 >[!WARNING]
