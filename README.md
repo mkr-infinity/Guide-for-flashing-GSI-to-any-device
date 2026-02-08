@@ -62,7 +62,7 @@ but check it to confirm.
 
 2. Get vbmeta.img from Stock ROM or [Google](https://dl.google.com/developers/android/qt/images/gsi/vbmeta.img)
 
-3. Get desired GSI
+3. Get desired GSI not sure [Check recordings](https://photos.app.goo.gl/EpmzdezYa9WyBTBx9)
 
 4. Boot into bootloader mode:
 ```
