@@ -108,7 +108,7 @@ export default function Prerequisites() {
           <li><strong>Sony Xperia:</strong> <a href="https://developer.sony.com/develop/drivers" target="_blank" rel="noreferrer">Xperia Drivers</a></li>
           <li><strong>Huawei / Honor:</strong> Bundled with HiSuite — install <a href="https://consumer.huawei.com/en/support/hisuite/" target="_blank" rel="noreferrer">HiSuite</a></li>
           <li><strong>LG:</strong> <a href="https://www.lg.com/us/support/mobile-support" target="_blank" rel="noreferrer">LG United Mobile Driver</a></li>
-          <li><strong>Anything else / no clue:</strong> <a href="https://adb.clockworkmod.com/" target="_blank" rel="noreferrer">Universal ADB Driver</a> (covers most random brands and budget MTK phones)</li>
+          <li><strong>Anything else / no clue:</strong> <a href="https://github.com/mkr-infinity/ADB-Fastboot_Drivers" target="_blank" rel="noreferrer">Universal ADB Driver</a> (covers most random brands and budget MTK phones)</li>
         </ul>
 
         <Callout type="note" title="Mac and Linux users — relax">
