@@ -14,6 +14,13 @@
 </p><p align="center">
   <strong>👉 Direct Link</strong><br/>
   <a href="https://gsiflash.netlify.app/">https://gsiflash.netlify.app/</a>
+
+
+
+  or
+
+
+  
 </p><p align="center">
   <a href="https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device">
     Alternative link (if the above doesn't work)
