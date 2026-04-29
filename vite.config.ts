@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 export default defineConfig({
-  base: "/Guide-for-flashing-GSI-to-any-device/", // ⭐ THIS IS THE FIX
-  
+  base: "/", // ⭐ universal fix
+
   plugins: [
     react(),
     tailwindcss(),
