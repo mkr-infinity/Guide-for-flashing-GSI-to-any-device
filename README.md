@@ -8,11 +8,11 @@
 ---
 
 <p align="center">
-  <a href="https://gsiflash.netlify.app/">
+  <a href="https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device">
     <img src="https://img.shields.io/badge/🚀%20Open%20Full%20Guide-Experience%20Now-7C3AED?style=for-the-badge&logo=google-chrome&logoColor=white"/>
   </a>
 </p><p align="center">
-  <strong>👉 Direct Link</strong><br/>
+  <strong>👉 Netlify Link</strong><br/>
   <a href="https://gsiflash.netlify.app/">https://gsiflash.netlify.app/</a>
 
 
