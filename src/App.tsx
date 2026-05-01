@@ -1,7 +1,8 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Route, Switch, useLocation } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Sidebar } from "@/components/Sidebar";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import { Heart, Bug } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SECTIONS } from "./sections";
@@ -13,6 +14,22 @@ function NotFoundFallback() {
 
 export default function App() {
   const [location, setLocation] = useLocation();
+  const [isCollapsed, setIsCollapsedState] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem("sidebar-collapsed") === "true";
+    } catch {
+      return false;
+    }
+  });
+
+  const setIsCollapsed = (v: boolean) => {
+    setIsCollapsedState(v);
+    try {
+      localStorage.setItem("sidebar-collapsed", String(v));
+    } catch {
+      // ignore
+    }
+  };
 
   const idx = SECTIONS.findIndex((s) => s.path === location);
   const currentIndex = idx === -1 ? 0 : idx;
@@ -27,10 +44,21 @@ export default function App() {
 
   return (
     <div className="min-h-[100dvh] flex w-full bg-background text-foreground">
-      <Sidebar activePath={location} />
+      <ReadingProgress />
 
-      <div className="flex-1 flex flex-col min-w-0 lg:ml-72">
-        {/* Top Bar — only over the content column */}
+      <Sidebar
+        activePath={location}
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+      />
+
+      <div
+        className={[
+          "flex-1 flex flex-col min-w-0 transition-[margin] duration-300",
+          isCollapsed ? "lg:ml-14" : "lg:ml-72",
+        ].join(" ")}
+      >
+        {/* Top Bar */}
         <header className="sticky top-0 z-30 w-full border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="flex h-14 items-center pl-16 pr-4 md:px-6 gap-4 justify-between">
             <div className="flex flex-col truncate min-w-0">
