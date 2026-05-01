@@ -22,7 +22,6 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
     return Number.isFinite(v) ? v : CIRCUMFERENCE;
   });
   const [open, setOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const current = SECTIONS[currentIndex];
   const currentGroup = current?.group ?? "";
@@ -61,11 +60,9 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200, damping: 22, delay: 0.3 }}
       ref={menuRef}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <AnimatePresence>
-        {(open || hovered) && (
+        {open && (
           <motion.div
             initial={{ opacity: 0, y: 8, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
