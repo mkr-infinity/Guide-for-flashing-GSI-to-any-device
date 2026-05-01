@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useSpring } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "wouter";
 import { SECTIONS } from "@/sections";
 
@@ -26,8 +25,6 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
   const [hovered, setHovered] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const current = SECTIONS[currentIndex];
-  const groupName = current?.group ?? "";
-  const label = current?.label ?? "";
   const currentGroup = current?.group ?? "";
   const topics = SECTIONS.filter((section) => section.group === currentGroup);
 
@@ -176,9 +173,6 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
             </tspan>
           </text>
         </svg>
-        <div className="absolute -bottom-1 -right-1 rounded-full bg-background border border-border shadow-md p-0.5 text-primary">
-          {open ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
-        </div>
       </motion.button>
     </motion.div>
   );
