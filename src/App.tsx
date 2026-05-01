@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <div className="min-h-[100dvh] flex w-full bg-background text-foreground">
-      <ReadingProgress />
+      <ReadingProgress currentIndex={currentIndex} />
 
       <Sidebar
         activePath={location}
