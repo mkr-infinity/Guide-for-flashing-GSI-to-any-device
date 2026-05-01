@@ -1,4 +1,6 @@
-📱 GSI Flashing Guide
+<div align="center">
+  <img src="./logo.svg" width="160" height="160" alt="Revision Master Logo">
+  <h1>GSI Flashing Guide</h1>
 
 <p align="center">
   😄 <strong>Hey there!</strong> This guide just got a glow-up ✨ <br/>
