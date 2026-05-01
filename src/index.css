@@ -308,3 +308,13 @@
 .sidebar-nav::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* ── Hide native page scrollbar on all devices ─────────── */
+html {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge legacy */
+}
+
+html::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Edge */
+}
