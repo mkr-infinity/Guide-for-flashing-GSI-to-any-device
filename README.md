@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./logo.svg" width="160" height="160" alt="Revision Master Logo">
+  <img src="./logo.svg" width="100" height="100" alt="Revision Master Logo">
   <h1>GSI Flashing Guide</h1>
 
 <p align="center">
