@@ -269,3 +269,42 @@
     inset: -1px;
   }
 }
+
+/* ── Modern sidebar scrollbar ──────────────────────────── */
+.sidebar-nav {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s;
+}
+
+.sidebar-nav:hover {
+  scrollbar-color: hsl(var(--sidebar-primary) / 0.35) transparent;
+}
+
+/* Webkit (Chrome, Edge, Safari) */
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 99px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 99px;
+  transition: background 0.3s;
+}
+
+.sidebar-nav:hover::-webkit-scrollbar-thumb {
+  background: hsl(var(--sidebar-primary) / 0.35);
+}
+
+.sidebar-nav:hover::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--sidebar-primary) / 0.6);
+}
+
+.sidebar-nav::-webkit-scrollbar-corner {
+  background: transparent;
+}

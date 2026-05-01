@@ -18,13 +18,17 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
   const pct = total > 1 ? currentIndex / (total - 1) : 1;
 
   const springPct = useSpring(pct, { stiffness: 120, damping: 20 });
-  const [offset, setOffset] = useState(CIRCUMFERENCE * (1 - pct));
+  const [offset, setOffset] = useState(() => {
+    const v = CIRCUMFERENCE * (1 - pct);
+    return Number.isFinite(v) ? v : CIRCUMFERENCE;
+  });
   const [hovered, setHovered] = useState(false);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     springPct.set(pct);
     const unsub = springPct.on("change", (v) => {
+      if (!Number.isFinite(v)) return;
       setOffset(CIRCUMFERENCE * (1 - Math.max(0, Math.min(1, v))));
     });
     return unsub;

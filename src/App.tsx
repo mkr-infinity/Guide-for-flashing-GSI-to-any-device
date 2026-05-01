@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from "wouter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Sidebar } from "@/components/Sidebar";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { TopProgressBar } from "@/components/TopProgressBar";
 import { Heart, Bug } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SECTIONS } from "./sections";
@@ -44,6 +45,7 @@ export default function App() {
 
   return (
     <div className="min-h-[100dvh] flex w-full bg-background text-foreground">
+      <TopProgressBar />
       <ReadingProgress currentIndex={currentIndex} />
 
       <Sidebar

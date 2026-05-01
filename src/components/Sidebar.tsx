@@ -49,7 +49,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto px-4 pb-6 space-y-6">
+      <nav className="flex-1 overflow-y-auto px-4 pb-6 space-y-6 sidebar-nav">
         {Object.entries(groupedSections).map(([group, groupSections]) => (
           <div key={group} className="space-y-1">
             <h3 className="text-xs font-bold text-sidebar-foreground/50 uppercase tracking-wider mb-2 px-2">
