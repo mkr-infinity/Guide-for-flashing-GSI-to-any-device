@@ -27,7 +27,7 @@ export default function LG() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="note" title="Why people still flash LG phones in 2026">
           LG quit, but the V60 and Velvet are still amazing hardware: headphone jack, microSD, removable cases, dual screens. A clean GSI breathes years of life into these phones, which is why LG flashing is still a healthy scene on XDA.
         </Callout>

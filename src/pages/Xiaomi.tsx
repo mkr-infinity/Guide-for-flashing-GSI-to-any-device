@@ -27,7 +27,7 @@ export default function Xiaomi() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="The 7-day waiting game">
           Xiaomi makes you wait 7–30 days after requesting bootloader unlock before they actually let you do it. There's no way around it. Plan ahead.
         </Callout>

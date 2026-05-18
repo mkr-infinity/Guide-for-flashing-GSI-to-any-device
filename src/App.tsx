@@ -1,10 +1,11 @@
 import { Suspense, useEffect, useState } from "react";
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Sidebar } from "@/components/Sidebar";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { TopProgressBar } from "@/components/TopProgressBar";
-import { Heart, Bug } from "lucide-react";
+import { Coffee, Bug } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SECTIONS } from "./sections";
 
@@ -14,7 +15,15 @@ function NotFoundFallback() {
 }
 
 export default function App() {
-  const [location, setLocation] = useLocation();
+  return (
+    <Router hook={useHashLocation}>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const [location, setLocation] = useHashLocation();
   const [isCollapsed, setIsCollapsedState] = useState<boolean>(() => {
     try {
       return localStorage.getItem("sidebar-collapsed") === "true";
@@ -61,39 +70,45 @@ export default function App() {
         ].join(" ")}
       >
         {/* Top Bar */}
-        <header className="sticky top-0 z-30 w-full border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-30 w-full border-b border-border bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm shadow-black/5">
           <div className="flex h-14 items-center pl-16 pr-4 md:px-6 gap-4 justify-between">
             <div className="flex flex-col truncate min-w-0">
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-primary">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground/80">
                 {currentSection?.group}
               </span>
-              <span className="text-sm font-medium truncate">
+              <span className="text-sm font-semibold truncate mt-0.5">
                 {currentSection?.label}
               </span>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
               <a
                 href="https://github.com/mkr-infinity/Guide-for-flashing-GSI-to-any-device/issues/new?title=%5BMistake%5D+&body=**Page%3A**+%28paste+the+page+name+or+URL%29%0A%0A**What%27s+wrong%3F**%0A%0A%0A**Suggested+fix%3A**%0A%0A%0A_Thanks+for+helping+improve+the+guide%21_"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Report a mistake or issue on GitHub"
                 title="Report a mistake or issue"
-                className="hidden md:inline-flex group items-center gap-2 h-9 px-3.5 rounded-full text-sm font-medium text-foreground/80 hover:text-foreground bg-muted/40 hover:bg-muted border border-border/60 hover:border-border transition-all"
+                className="hidden md:inline-flex group items-center gap-2 h-9 px-3.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300
+                  text-red-700 dark:text-red-400 
+                  bg-red-500/10 hover:bg-red-500/20 
+                  border border-red-500/30 hover:border-red-500/50 hover:shadow-[0_0_15px_-3px_rgba(239,68,68,0.3)]"
               >
-                <Bug className="h-4 w-4 text-amber-500 group-hover:rotate-12 transition-transform" />
-                <span>Report a mistake</span>
+                <Bug className="h-4 w-4 text-red-600 dark:text-red-500 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="opacity-90 group-hover:opacity-100">Report Bug</span>
               </a>
               <a
-                href="https://supportmkr.netlify.app/"
+                href="https://buymeacoffee.com/mkr_infinity"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Support me"
-                className="group relative inline-flex items-center gap-1.5 sm:gap-2 h-9 px-3 sm:px-4 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-pink-500 via-rose-500 to-red-500 shadow-md shadow-rose-500/25 hover:shadow-lg hover:shadow-rose-500/40 hover:scale-[1.04] active:scale-[0.97] transition-all overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 h-9 px-5 rounded-lg text-[11px] font-extrabold uppercase tracking-widest transition-all duration-500
+                  text-yellow-950 dark:text-yellow-950
+                  bg-gradient-to-r from-yellow-400 to-amber-400 hover:from-yellow-300 hover:to-amber-300
+                  shadow-md shadow-yellow-500/20 hover:shadow-lg hover:shadow-yellow-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 overflow-hidden ring-1 ring-yellow-500/50"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <Heart className="h-4 w-4 fill-white relative z-10 group-hover:animate-pulse" />
-                <span className="relative z-10 hidden sm:inline">Support Me</span>
-                <span className="relative z-10 sm:hidden">Support</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                <Coffee className="h-4 w-4 text-yellow-950 relative z-10 animate-pulse group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10 hidden sm:inline">Buy me a coffee</span>
+                <span className="relative z-10 sm:hidden">Donate</span>
               </a>
               <ThemeToggle />
             </div>
@@ -133,34 +148,36 @@ export default function App() {
             </AnimatePresence>
 
             {/* Bottom Navigation */}
-            <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-4 pb-4">
+            <div className="mt-20 flex flex-col sm:flex-row justify-between gap-4 pb-12">
               {prevSection ? (
                 <button
                   type="button"
                   onClick={() => setLocation(prevSection.path)}
-                  className="group w-full sm:w-auto sm:max-w-[calc(50%-0.5rem)] text-left rounded-lg border border-border bg-card px-5 py-4 transition-colors hover:bg-accent hover-elevate"
+                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] text-left rounded-xl border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
                 >
-                  <span className="block text-xs text-muted-foreground font-normal mb-1">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="block text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mb-1.5 transition-colors group-hover:text-foreground/70">
                     ← Previous
                   </span>
-                  <span className="block font-semibold text-sm sm:text-base truncate">
+                  <span className="block font-semibold text-base truncate text-foreground/90 group-hover:text-foreground transition-colors">
                     {prevSection.label}
                   </span>
                 </button>
               ) : (
-                <div className="hidden sm:block flex-1" />
+                <div className="hidden sm:block flex-1 max-w-[280px]" />
               )}
 
               {nextSection && (
                 <button
                   type="button"
                   onClick={() => setLocation(nextSection.path)}
-                  className="group w-full sm:w-auto sm:ml-auto sm:max-w-[calc(50%-0.5rem)] text-right rounded-lg border border-border bg-card px-5 py-4 transition-colors hover:bg-accent hover-elevate"
+                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] sm:ml-auto text-right rounded-xl border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
                 >
-                  <span className="block text-xs text-muted-foreground font-normal mb-1">
+                   <div className="absolute inset-0 bg-gradient-to-l from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="block text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mb-1.5 transition-colors group-hover:text-primary/70">
                     Next →
                   </span>
-                  <span className="block font-semibold text-sm sm:text-base text-primary truncate">
+                  <span className="block font-semibold text-base truncate text-primary group-hover:text-primary transition-colors">
                     {nextSection.label}
                   </span>
                 </button>

@@ -26,7 +26,7 @@ export default function Nothing() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="tip" title="Nothing is one of the good ones">
           Nothing officially supports bootloader unlocking, publishes their kernel sources, and treats modders well. The whole process feels closer to Pixel than to Samsung.
         </Callout>

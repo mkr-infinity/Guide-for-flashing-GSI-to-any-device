@@ -26,7 +26,7 @@ export default function Vivo() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Most Vivo / iQOO phones cannot be officially unlocked">
           Vivo, like Oppo, generally does not provide a way to unlock the bootloader for retail devices. There is no "fastboot oem unlock" that just works. This means GSI flashing is <strong>not possible</strong> on most Vivo / iQOO phones unless someone in the community has reverse-engineered an unlock method for your specific model.
         </Callout>

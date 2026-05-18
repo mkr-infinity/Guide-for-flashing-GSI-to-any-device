@@ -13,7 +13,7 @@ export default function Bootloader() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <h3>Step 1 — Plug in your phone</h3>
         <p>
           Connect your phone to the computer with the USB cable. The first time you do this, your phone will pop up a "Allow USB debugging?" prompt — tap <strong>Allow</strong> (and tick "Always allow from this computer" so you don't see it again).

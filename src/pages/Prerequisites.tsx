@@ -54,7 +54,7 @@ export default function Prerequisites() {
         </CardContent>
       </Card>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald mt-12">
+      <div className="prose dark:prose-invert max-w-none mt-12">
         <h2>1. Check Project Treble support</h2>
         <p>
           Install the <strong>Treble Check</strong> app from the Play Store and open it. If it shows a big green checkmark like in the picture below, you're good.

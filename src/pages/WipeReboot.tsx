@@ -13,7 +13,7 @@ export default function WipeReboot() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <h3>Why we wipe</h3>
         <p>
           The old userdata partition is full of files written by your old ROM. The new GSI doesn't recognize them and will probably bootloop forever. So we factory reset to give it a clean home.

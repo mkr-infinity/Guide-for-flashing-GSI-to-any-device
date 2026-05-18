@@ -27,7 +27,7 @@ export default function Oppo() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Bootloader unlock support varies">
           <strong>OnePlus</strong> phones are usually fully unlockable from Developer Options. <strong>Realme</strong> requires their "In-Depth Test" app to apply for unlock. <strong>Oppo</strong> mostly does <em>not</em> allow official bootloader unlocking — only a handful of older Oppo models (like Find X2/X3) let you do it. Check XDA for your specific model first.
         </Callout>

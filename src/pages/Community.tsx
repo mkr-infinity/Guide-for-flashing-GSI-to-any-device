@@ -39,7 +39,7 @@ export default function Community() {
         </a>
       </div>
 
-      <div className="mt-8 prose dark:prose-invert max-w-none prose-emerald">
+      <div className="mt-8 prose dark:prose-invert max-w-none">
         <h3>Other places to look for help</h3>
         <ul>
           <li><strong>XDA Developers</strong> — search for your exact device model. Almost every Android phone has a thread with people who have flashed GSIs on it.</li>

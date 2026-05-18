@@ -10,7 +10,7 @@ export default function WhatIsGsi() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <p className="text-lg leading-relaxed">
           GSI stands for <strong>Generic System Image</strong>. Think of it like a "universal Android" — one ROM file that can boot on tons of different phones, instead of being built specifically for your exact model.
         </p>

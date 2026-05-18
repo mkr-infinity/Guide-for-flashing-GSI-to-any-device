@@ -27,7 +27,7 @@ export default function Motorola() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="tip" title="Why I love Motorola for this">
           Motorola officially supports bootloader unlocking on most models, near-stock Android means GSIs run super well, and there's no warranty drama like Samsung Knox. If you're new to flashing, this is one of the best brands to start on.
         </Callout>

@@ -27,7 +27,7 @@ export default function MediaTek() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Step zero: confirm Project Treble actually works">
           A lot of budget MTK phones (especially Itel, Cubot, sub-$100 Tecno/Infinix models) <em>claim</em> Treble support but ship with a broken or partial implementation. <strong>Run the Treble Check app</strong> first. If it shows red anywhere, this guide can't help you — flashing a GSI on a broken-Treble device produces an unbootable phone every time.
         </Callout>

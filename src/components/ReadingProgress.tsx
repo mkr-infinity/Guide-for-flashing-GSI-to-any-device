@@ -116,16 +116,16 @@ export function ReadingProgress({ currentIndex }: ReadingProgressProps) {
           className="absolute inset-0 rounded-full opacity-30 blur-md"
           style={{
             background:
-              "radial-gradient(circle, #34D399 0%, #0D9488 60%, transparent 100%)",
+              "radial-gradient(circle, #3B82F6 0%, #06B6D4 60%, transparent 100%)",
           }}
         />
 
         <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} className="relative z-10 drop-shadow-md">
           <defs>
             <linearGradient id={GRAD_ID} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#34D399" />
-              <stop offset="50%" stopColor="#10B981" />
-              <stop offset="100%" stopColor="#818CF8" />
+              <stop offset="0%" stopColor="#3B82F6" />    {/* deep blue */}
+              <stop offset="50%" stopColor="#06B6D4" />   {/* soft cyan */}
+              <stop offset="100%" stopColor="#8B5CF6" />  {/* muted purple */}
             </linearGradient>
           </defs>
           <circle

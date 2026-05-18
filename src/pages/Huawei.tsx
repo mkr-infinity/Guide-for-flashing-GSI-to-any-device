@@ -27,7 +27,7 @@ export default function Huawei() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Read this before you spend a single dollar">
           Huawei is the brand I get the most "I bricked it, please help" messages about. Their bootloader is genuinely locked down at the hardware level on most models. Many "unlock services" online are scams. Many that aren't scams still <em>permanently brick</em> a percentage of devices. If your phone is your daily driver and you can't afford to replace it, please don't try this on a Huawei.
         </Callout>

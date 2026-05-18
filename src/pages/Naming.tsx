@@ -317,7 +317,7 @@ export default function Naming() {
       {/* File compression */}
       <div>
         <h3 className="text-xl font-bold tracking-tight mb-3">A note on the file extension</h3>
-        <div className="prose dark:prose-invert max-w-none prose-emerald">
+        <div className="prose dark:prose-invert max-w-none">
           <p>
             GSIs usually come compressed: <code>.img.xz</code>, <code>.img.gz</code>, or zipped. Before flashing, you need the raw <code>.img</code> file.
           </p>

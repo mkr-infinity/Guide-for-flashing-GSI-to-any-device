@@ -11,7 +11,7 @@ export default function Vbmeta() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <p className="text-lg">
           Android has a built-in security feature called <strong>Verified Boot</strong>. It checks every time your phone starts up that the system hasn't been modified. We're about to modify the system, so we need to politely ask it to stop checking — that's what flashing vbmeta does.
         </p>

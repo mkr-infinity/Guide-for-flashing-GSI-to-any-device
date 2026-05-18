@@ -19,7 +19,7 @@ export default function About() {
           className="w-32 h-32 rounded-2xl ring-4 ring-primary/20 shadow-lg object-cover shrink-0"
         />
 
-        <div className="space-y-4 prose dark:prose-invert max-w-none prose-emerald">
+        <div className="space-y-4 prose dark:prose-invert max-w-none">
           <p className="text-lg leading-relaxed m-0">
             Hey, I'm an Android tinkerer from India. I've been flashing ROMs and breaking phones since I was a teenager. This guide exists because the first time I tried to flash a GSI, I spent two days reading scattered XDA threads and almost bricked my Lenovo tablet — and I figured nobody else should have to do that.
           </p>

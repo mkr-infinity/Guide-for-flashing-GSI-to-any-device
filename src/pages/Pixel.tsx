@@ -26,7 +26,7 @@ export default function Pixel() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="tip" title="Pixels are the gold standard">
           Pixels are literally the devices Google designs GSIs against. Bootloader unlock is one command, the partitions are clean, fastbootd works perfectly, and you can re-lock the bootloader later if you want. This is as easy as it gets.
         </Callout>

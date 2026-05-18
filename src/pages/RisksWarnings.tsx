@@ -12,7 +12,7 @@ export default function RisksWarnings() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <p className="text-lg leading-relaxed">
           I am not going to sugarcoat it — flashing a GSI is messing with the heart of your phone's software. Most of the time it just works. Sometimes it doesn't. Here's what you should know before we start.
         </p>

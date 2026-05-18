@@ -13,7 +13,7 @@ export default function FlashGsi() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <h3>Step A — Boot into fastbootd</h3>
         <p>
           Android 10+ devices use something called <strong>dynamic partitions</strong>, which is a fancy way of saying the system partition is virtual and lives inside another partition. To flash it, we need a deeper mode called <code>fastbootd</code>:

@@ -27,7 +27,7 @@ export default function Sony() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="tip" title="Sony has been good to modders for over a decade">
           Sony's official unlock website and the AOSP-based skin on Xperias make GSI flashing very approachable. Just be aware of two things: DRM keys and the camera processing.
         </Callout>

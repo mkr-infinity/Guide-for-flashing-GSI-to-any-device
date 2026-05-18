@@ -10,7 +10,7 @@ export default function Commands() {
         </p>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <h3>The full flow</h3>
         <CodeBlock
           code={`# 1. Reboot to bootloader

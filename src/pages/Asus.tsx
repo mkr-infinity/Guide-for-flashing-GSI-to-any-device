@@ -26,7 +26,7 @@ export default function Asus() {
         ]}
       />
 
-      <div className="prose dark:prose-invert max-w-none prose-emerald">
+      <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="The Asus unlock app got pulled">
           Asus used to ship a "Unlock Device App" you'd download from their website. As of late 2023, they've removed it for newer ROG and Zenfone models — meaning some recent devices (ROG Phone 8, Zenfone 11) are not officially unlockable yet. Older models still work fine. Check XDA for your exact model first.
         </Callout>
