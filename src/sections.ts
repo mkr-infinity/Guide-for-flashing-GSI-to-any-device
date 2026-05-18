@@ -1,0 +1,225 @@
+import { lazy } from "react";
+import { BRAND_ICONS, type BrandKey } from "@/components/BrandIcons";
+
+export type Section = {
+  id: string;
+  path: string;
+  group: string;
+  label: string;
+  numberLabel?: string;
+  brand?: BrandKey;
+  component: React.LazyExoticComponent<any>;
+};
+
+export { BRAND_ICONS };
+
+export const SECTIONS: Section[] = [
+  {
+    id: "overview",
+    path: "/",
+    group: "INTRODUCTION",
+    label: "Overview",
+    component: lazy(() => import("./pages/Overview")),
+  },
+  {
+    id: "what-is-gsi",
+    path: "/what-is-gsi",
+    group: "INTRODUCTION",
+    label: "What is a GSI?",
+    component: lazy(() => import("./pages/WhatIsGsi")),
+  },
+  {
+    id: "risks",
+    path: "/risks",
+    group: "INTRODUCTION",
+    label: "Risks & Warnings",
+    component: lazy(() => import("./pages/RisksWarnings")),
+  },
+  {
+    id: "prerequisites",
+    path: "/prerequisites",
+    group: "STEP 1 — PREPARATION",
+    label: "Prerequisites Checklist",
+    numberLabel: "0",
+    component: lazy(() => import("./pages/Prerequisites")),
+  },
+  {
+    id: "naming",
+    path: "/naming",
+    group: "STEP 1 — PREPARATION",
+    label: "Decode GSI File Names",
+    numberLabel: "1",
+    component: lazy(() => import("./pages/Naming")),
+  },
+  {
+    id: "dsu-sideloader",
+    path: "/dsu-sideloader",
+    group: "STEP 1 — PREPARATION",
+    label: "Test with DSU Sideloader",
+    numberLabel: "2",
+    component: lazy(() => import("./pages/DsuSideloader")),
+  },
+  {
+    id: "bootloader",
+    path: "/bootloader",
+    group: "STEP 2 — FLASHING",
+    label: "Boot into Bootloader",
+    numberLabel: "3",
+    component: lazy(() => import("./pages/Bootloader")),
+  },
+  {
+    id: "vbmeta",
+    path: "/vbmeta",
+    group: "STEP 2 — FLASHING",
+    label: "Flash vbmeta",
+    numberLabel: "4",
+    component: lazy(() => import("./pages/Vbmeta")),
+  },
+  {
+    id: "flash-gsi",
+    path: "/flash-gsi",
+    group: "STEP 2 — FLASHING",
+    label: "Flash the GSI",
+    numberLabel: "5",
+    component: lazy(() => import("./pages/FlashGsi")),
+  },
+  {
+    id: "wipe",
+    path: "/wipe",
+    group: "STEP 2 — FLASHING",
+    label: "Wipe & Reboot",
+    numberLabel: "6",
+    component: lazy(() => import("./pages/WipeReboot")),
+  },
+  {
+    id: "samsung",
+    path: "/samsung",
+    group: "BY DEVICE BRAND",
+    label: "Samsung Galaxy",
+    brand: "samsung",
+    component: lazy(() => import("./pages/Samsung")),
+  },
+  {
+    id: "xiaomi",
+    path: "/xiaomi",
+    group: "BY DEVICE BRAND",
+    label: "Xiaomi · Redmi · POCO",
+    brand: "xiaomi",
+    component: lazy(() => import("./pages/Xiaomi")),
+  },
+  {
+    id: "oppo",
+    path: "/oppo",
+    group: "BY DEVICE BRAND",
+    label: "Oppo · Realme · OnePlus",
+    brand: "oppo",
+    component: lazy(() => import("./pages/Oppo")),
+  },
+  {
+    id: "vivo",
+    path: "/vivo",
+    group: "BY DEVICE BRAND",
+    label: "Vivo · iQOO",
+    brand: "vivo",
+    component: lazy(() => import("./pages/Vivo")),
+  },
+  {
+    id: "motorola",
+    path: "/motorola",
+    group: "BY DEVICE BRAND",
+    label: "Motorola",
+    brand: "motorola",
+    component: lazy(() => import("./pages/Motorola")),
+  },
+  {
+    id: "pixel",
+    path: "/pixel",
+    group: "BY DEVICE BRAND",
+    label: "Google Pixel",
+    brand: "pixel",
+    component: lazy(() => import("./pages/Pixel")),
+  },
+  {
+    id: "nothing",
+    path: "/nothing",
+    group: "BY DEVICE BRAND",
+    label: "Nothing Phone",
+    brand: "nothing",
+    component: lazy(() => import("./pages/Nothing")),
+  },
+  {
+    id: "asus",
+    path: "/asus",
+    group: "BY DEVICE BRAND",
+    label: "Asus · ROG · Zenfone",
+    brand: "asus",
+    component: lazy(() => import("./pages/Asus")),
+  },
+  {
+    id: "sony",
+    path: "/sony",
+    group: "BY DEVICE BRAND",
+    label: "Sony Xperia",
+    brand: "sony",
+    component: lazy(() => import("./pages/Sony")),
+  },
+  {
+    id: "huawei",
+    path: "/huawei",
+    group: "BY DEVICE BRAND",
+    label: "Huawei · Honor",
+    brand: "huawei",
+    component: lazy(() => import("./pages/Huawei")),
+  },
+  {
+    id: "lg",
+    path: "/lg",
+    group: "BY DEVICE BRAND",
+    label: "LG (Legacy)",
+    brand: "lg",
+    component: lazy(() => import("./pages/LG")),
+  },
+  {
+    id: "mediatek",
+    path: "/mediatek",
+    group: "BY DEVICE BRAND",
+    label: "MediaTek (Infinix · Tecno · Itel)",
+    brand: "mediatek",
+    component: lazy(() => import("./pages/MediaTek")),
+  },
+  {
+    id: "commands",
+    path: "/commands",
+    group: "REFERENCE",
+    label: "All Commands",
+    component: lazy(() => import("./pages/Commands")),
+  },
+  {
+    id: "troubleshooting",
+    path: "/troubleshooting",
+    group: "REFERENCE",
+    label: "Troubleshooting",
+    component: lazy(() => import("./pages/Troubleshooting")),
+  },
+  {
+    id: "community",
+    path: "/community",
+    group: "HELP & ABOUT",
+    label: "Get Help",
+    component: lazy(() => import("./pages/Community")),
+  },
+  {
+    id: "about",
+    path: "/about",
+    group: "HELP & ABOUT",
+    label: "About Me",
+    component: lazy(() => import("./pages/About")),
+  },
+  {
+    id: "support",
+    path: "/support",
+    group: "HELP & ABOUT",
+    label: "Support My Work",
+    component: lazy(() => import("./pages/Support")),
+  },
+];
