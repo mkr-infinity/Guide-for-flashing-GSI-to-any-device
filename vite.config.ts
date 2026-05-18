@@ -6,7 +6,7 @@ import path from "path";
 const rawPort = process.env.PORT;
 const port = rawPort ? Number(rawPort) : 5173;
 
-const basePath = process.env.BASE_PATH ?? "/";
+const basePath = process.env.BASE_PATH ?? "/Guide-for-flashing-GSI-to-any-device/";
 
 export default defineConfig({
   base: basePath,
