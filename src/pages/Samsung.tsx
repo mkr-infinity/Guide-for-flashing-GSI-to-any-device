@@ -18,6 +18,7 @@ export default function Samsung() {
       <BrandSpec
         difficulty="Hard"
         difficultyNote="Knox tripping is permanent, heavily fragmented partition structures"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Developer Options OEM Unlocking, then Download Mode + Volume Up confirm. On Android 16 / One UI 8, this toggle may be missing on some firmware.</> },
           { label: "Flash tool", value: <><strong>Odin</strong> (Windows) is preferred. Heimdall is unreliable on modern models.</> },
