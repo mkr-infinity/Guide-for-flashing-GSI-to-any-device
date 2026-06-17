@@ -26,6 +26,7 @@ export default function Samsung() {
           { label: "Key step", value: <>Flashing exact version-matched vbmeta/recovery and using multidisabler</> },
           { label: "fastboot status", value: <>Standard bootloader fastboot is NOT supported. Limited userspace fastbootd support is highly device-dependent.</> },
           { label: "Snapdragon / region locks", value: <>US, Canada, carrier, and some Snapdragon Galaxy models are commonly bootloader-locked even when other regional variants can unlock.</> },
+          { label: "One UI 8 status", value: <>If Android 16 / One UI 8 hides OEM Unlocking on your firmware, treat it as locked until model-specific proof says otherwise</> },
           { label: "Brick recovery", value: <>Re-flash stock firmware (.tar files) via Odin</> },
           { label: "Warranty / Pay", value: <span className="text-red-600 dark:text-red-400 font-medium">Knox tripped → Samsung Pay + Secure Folder lost forever</span> },
         ]}
@@ -61,6 +62,9 @@ export default function Samsung() {
         </Callout>
         <Callout type="warning" title="Android 16 / One UI 8 OEM Unlocking Notice">
           Recent user reports for Samsung Android 16 / One UI 8 mention that <strong>OEM Unlocking</strong> may no longer appear in Developer Options on affected firmware. If it is absent after setup, internet connection, date/time sync, and the usual waiting period, there is no safe generic workaround. Do not flash a GSI unless the bootloader can be officially unlocked for your exact model and region.
+        </Callout>
+        <Callout type="note" title="Snapdragon is not automatically locked everywhere">
+          The lock pattern is regional. US/Canada/carrier Snapdragon models are commonly locked, while some international Snapdragon models may still unlock. Always trust the exact model number and CSC over chipset guesses.
         </Callout>
         <p>
           Once enabled, power off the phone. Boot to Download Mode and hold <strong>Volume Up</strong> when prompted to unlock the bootloader. The phone will wipe all userdata. Go through initial setup, connect to Wi-Fi, and re-enable Developer Options to verify OEM Unlocking is still present and greyed out.
