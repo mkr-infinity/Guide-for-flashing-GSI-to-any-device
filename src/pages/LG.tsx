@@ -20,6 +20,7 @@ export default function LG() {
         rows={[
           { label: "Unlock method", value: <>Old <strong>LG Developer Site</strong> codes (still archived on XDA) for supported models</> },
           { label: "Flash tool", value: <><strong>LGUP</strong> + <strong>LG Bridge</strong> on Windows — not standard fastboot</> },
+          { label: "Data warning", value: <>Avoid cross-flashing random <code>.kdz</code> builds; wrong modem/region firmware can break radio functions</> },
           { label: "File format", value: <><code>.kdz</code> or <code>.dz</code> for LGUP, not <code>.img</code></> },
           { label: "US carrier models", value: <span className="text-red-600 dark:text-red-400 font-medium">Verizon / AT&T / T-Mobile branded LGs are mostly unlockable-blocked</span> },
           { label: "Best models", value: <>LG G5 / G6 / G7 / G8, V20 / V30 / V40 / V50, Velvet (international SKUs)</> },
@@ -63,6 +64,10 @@ fastboot oem unlock`}
 
         <Callout type="warning" title="LGUP is finicky on Windows 11">
           LGUP was last updated in ~2018 and doesn't love Windows 11. Most people run it inside a Windows 10 virtual machine, or use a community-patched fork like <strong>UPPERCUT</strong> on XDA. Worth knowing before you spend an hour fighting driver signing.
+        </Callout>
+
+        <Callout type="warning" title="Do not mix random KDZ regions">
+          LG stock packages often include modem and carrier configuration. Flashing the wrong region or carrier <code>.kdz</code> can break cellular service even if Android boots. Match model suffix, region, and carrier as closely as possible.
         </Callout>
 
         <h3>Step 4 — Flash the GSI (after unlock)</h3>
