@@ -16,6 +16,7 @@ export default function Huawei() {
       <BrandSpec
         difficulty="Very Hard"
         difficultyNote="Often paid third-party services only"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Official unlock", value: <span className="text-red-600 dark:text-red-400 font-medium">Killed by Huawei in July 2018 — no official method since</span> },
           { label: "Workaround", value: <>Paid third-party services like <strong>DC-Unlocker</strong>, HCU Client, or Huawei ID-based tools (~$20–$80)</> },
