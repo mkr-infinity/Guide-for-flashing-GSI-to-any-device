@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { AlertTriangle, Cable, CheckCircle2, Clock, Cpu, Download, HardDrive, Monitor, Shield, Smartphone } from "lucide-react";
+import { AlertTriangle, Cable, CheckCircle2, Clock, Cpu, Download, HardDrive, Shield, Smartphone } from "lucide-react";
 import heroFlash from "@/assets/hero-flash.png";
 
 export default function Overview() {
