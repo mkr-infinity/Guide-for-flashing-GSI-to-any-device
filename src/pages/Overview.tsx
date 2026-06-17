@@ -6,20 +6,21 @@ import heroFlash from "@/assets/hero-flash.png";
 export default function Overview() {
   return (
     <div className="space-y-10">
-      <section className="relative overflow-hidden border border-emerald-500/25 bg-zinc-950 text-white shadow-xl">
-        <img src={heroFlash} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-25 blur-sm scale-105" />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(16,185,129,0.22),rgba(20,184,166,0.08),rgba(15,23,42,0.95))]" />
-        <div className="absolute right-0 top-0 h-full w-1/3 border-l border-white/10 bg-white/[0.03]" />
+      <section className="relative overflow-hidden border border-emerald-400/30 bg-zinc-950 text-white shadow-xl">
+        <img src={heroFlash} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-45 blur-[2px] scale-105" />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.92)_0%,rgba(6,78,59,0.76)_48%,rgba(2,6,23,0.58)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(52,211,153,0.28),transparent_34%),radial-gradient(circle_at_12%_88%,rgba(20,184,166,0.22),transparent_32%)]" />
+        <div className="absolute right-0 top-0 h-full w-1/3 border-l border-white/10 bg-white/[0.04] backdrop-blur-[1px]" />
         <div className="relative z-10 grid gap-8 p-7 md:grid-cols-[1.2fr_0.8fr] md:p-12">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-100">
+            <div className="mb-6 inline-flex items-center gap-2 border border-emerald-300/40 bg-emerald-300/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-50 shadow-sm shadow-emerald-950/30">
               <Shield className="h-3.5 w-3.5" />
               Read before flashing
             </div>
             <h1 className="max-w-2xl text-4xl font-black tracking-tight md:text-6xl">
               Flash a GSI without guessing.
             </h1>
-            <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-white/82 md:text-lg">
+            <p className="mt-5 max-w-2xl border-l-2 border-emerald-300/60 bg-black/20 px-4 py-3 text-base font-medium leading-relaxed text-white/88 md:text-lg">
               A practical, brand-aware guide for Project Treble devices. It covers bootloader unlocks, vbmeta, fastbootd, dynamic partitions, recovery methods, and the mistakes that usually cause bootloops.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -37,7 +38,7 @@ export default function Overview() {
               { label: "Critical step", value: "Unlock officially" },
               { label: "Main risk", value: "Wrong GSI or vbmeta" },
             ].map((item) => (
-              <div key={item.label} className="border border-white/15 bg-black/20 p-4">
+              <div key={item.label} className="border border-white/20 bg-black/30 p-4 shadow-sm shadow-black/20 backdrop-blur-[2px]">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-emerald-200/80">{item.label}</div>
                 <div className="mt-1 text-lg font-black">{item.value}</div>
               </div>
