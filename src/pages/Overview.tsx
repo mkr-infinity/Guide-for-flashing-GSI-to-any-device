@@ -7,6 +7,7 @@ export default function Overview() {
   return (
     <div className="space-y-10">
       <section className="relative overflow-hidden border border-emerald-500/25 bg-zinc-950 text-white shadow-xl">
+        <img src={heroFlash} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-25 blur-sm scale-105" />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(16,185,129,0.22),rgba(20,184,166,0.08),rgba(15,23,42,0.95))]" />
         <div className="absolute right-0 top-0 h-full w-1/3 border-l border-white/10 bg-white/[0.03]" />
         <div className="relative z-10 grid gap-8 p-7 md:grid-cols-[1.2fr_0.8fr] md:p-12">
