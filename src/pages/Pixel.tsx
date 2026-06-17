@@ -16,6 +16,7 @@ export default function Pixel() {
       <BrandSpec
         difficulty="Easy"
         difficultyNote="The gold standard"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Single command: <code>fastboot flashing unlock</code></> },
           { label: "vbmeta needed?", value: <>Often <strong>not required</strong> — Pixels accept GSIs directly</> },
