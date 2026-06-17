@@ -16,6 +16,7 @@ export default function Nothing() {
       <BrandSpec
         difficulty="Easy"
         difficultyNote="Pixel-tier developer-friendliness"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Single command: <code>fastboot flashing unlock</code></> },
           { label: "OEM Unlock toggle", value: <>Standard Developer Options → OEM Unlocking</> },
