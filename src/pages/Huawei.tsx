@@ -21,7 +21,7 @@ export default function Huawei() {
           { label: "Official unlock", value: <span className="text-red-600 dark:text-red-400 font-medium">Killed by Huawei in July 2018 — no official method since</span> },
           { label: "Workaround", value: <>Paid third-party services like <strong>DC-Unlocker</strong>, HCU Client, or Huawei ID-based tools (~$20–$80)</> },
           { label: "Honor (post-2020)", value: <>Honor split off from Huawei — slightly easier on a few new models, still no official path</> },
-          { label: "EMUI / HarmonyOS quirk", value: <>HarmonyOS NEXT (2024+) replaces Android underneath — GSI is impossible on those models</> },
+          { label: "EMUI / HarmonyOS quirk", value: <>HarmonyOS NEXT is not Android-compatible underneath — GSI is impossible on those models</> },
           { label: "vbmeta partitions", value: <>Multiple — <code>vbmeta</code>, <code>vbmeta_system</code>, <code>vbmeta_vendor</code></> },
           { label: "Brick recovery", value: <><strong>HiSuite</strong> + DLOAD mode + leaked stock firmware (.app files)</> },
           { label: "What you lose", value: <span className="text-red-600 dark:text-red-400 font-medium">Camera AI, Mate/P series Leica processing, secure folder, Huawei Pay</span> },
@@ -35,7 +35,7 @@ export default function Huawei() {
 
         <h3>Step 1 — Check if your model is even unlockable</h3>
         <p>
-          Before anything else, search XDA: "<em>[your exact model] bootloader unlock 2024</em>". If the most recent threads are full of "still impossible" / "service stopped working", that's your answer. The list of unlockable Huawei/Honor models shrinks every year.
+          Before anything else, search XDA: "<em>[your exact model] bootloader unlock 2026</em>". If the most recent threads are full of "still impossible" / "service stopped working", that's your answer. The list of unlockable Huawei/Honor models shrinks every year.
         </p>
         <ul>
           <li><strong>Pre-2018 models</strong> (Mate 9, P10, Honor 8, Honor View 10): used to unlock with a free code from Huawei's own site. That site is dead, but old codes still float around on XDA — search by your serial number.</li>
