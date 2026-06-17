@@ -19,6 +19,7 @@ export default function Sony() {
         lastUpdated="June 17, 2026"
         rows={[
           { label: "Eligibility check", value: <>Dial <code>*#*#7378423#*#*</code> → Service Info → Configuration</> },
+          { label: "US Xperia IV note", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Sony lists Xperia 1 IV XQ-CT62 and 5 IV XQ-CQ62 US variants as not unlockable</span> },
           { label: "Unlock method", value: <>Get unique code by email from <strong>Sony Developer site</strong> via IMEI</> },
           { label: "Apply unlock", value: <><code>fastboot oem unlock 0xUNLOCK_CODE</code> — the <code>0x</code> prefix is mandatory</> },
           { label: "vbmeta partitions", value: <>Just <code>vbmeta</code></> },
@@ -37,6 +38,7 @@ export default function Sony() {
         <ol>
           <li>On your phone, dial <code>*#*#7378423#*#*</code> (the "service info" code).</li>
           <li>Service Info → Configuration → Bootloader unlock allowed: <strong>Yes</strong> means you're good. <strong>No</strong> means your model/region isn't unlockable.</li>
+          <li>Check Sony's unlock page for your exact variant. Sony specifically notes some US Xperia IV variants do not support bootloader unlock.</li>
           <li>While you're there, write down your IMEI. You'll need it.</li>
         </ol>
 
