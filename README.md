@@ -1,45 +1,42 @@
 <div align="center">
-  <img src="./logo.svg" width="96" height="96" alt="GSI Flashing Guide logo">
+  <img src="./logo.svg" width="100" height="100" alt="Revision Master Logo">
   <h1>GSI Flashing Guide</h1>
-  <p>A practical guide for flashing Generic System Images on Project Treble Android devices.</p>
 
-  <p>
-    <a href="https://gsiflash.netlify.app/">Open Netlify Site</a>
-    ·
-    <a href="https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device/">Open GitHub Pages</a>
-  </p>
-</div>
+<p align="center">
+  😄 <strong>Hey there!</strong> This guide just got a glow-up ✨ <br/>
+  Now cleaner, smoother, and easier to follow — dive in below 👇
+</p>
 
 ---
 
-## What This Covers
+<p align="center">
+  <a href="https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device">
+    <img src="https://img.shields.io/badge/🚀%20Open%20Full%20Guide-Experience%20Now-7C3AED?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+  </a>
+</p><p align="center">
+  <strong>👉 Netlify Link</strong><br/>
+  <a href="https://gsiflash.netlify.app/">https://gsiflash.netlify.app/</a>
 
-- GSI basics, file naming, and Project Treble checks.
-- Bootloader unlock preparation and safety warnings.
-- vbmeta, fastbootd, dynamic partitions, wipe, and reboot flow.
-- Brand-specific notes for Samsung, Xiaomi, Oppo/Realme/OnePlus, Vivo/iQOO, Motorola, Pixel, Nothing, Asus, Sony, Huawei/Honor, LG, and MediaTek devices.
-- Troubleshooting, command cheat sheet, tool links, and device report template.
 
-## Current Data Notes
 
-Last reviewed: June 17, 2026.
+  or
 
-- TrebleDroid is the active continuation point for the old Phh/Treble wiki.
-- Sony's official unlock page still warns about DRM/warranty risk and lists some US Xperia IV variants as not bootloader-unlockable.
-- mtkclient is active in 2026 and documents newer V6/protected MediaTek loader behavior.
-- Brand unlock policies change often; always confirm your exact model, region, carrier, firmware, and chipset before flashing.
 
-## Local Development
+  
+</p><p align="center">
+  <a href="https://mkr-infinity.github.io/Guide-for-flashing-GSI-to-any-device">
+    Alternative link (if the above doesn't work)
+  </a>
+</p>
 
-```bash
-pnpm install
-pnpm run dev
-pnpm run typecheck
-pnpm run build
-```
+---
 
-For GitHub Pages-compatible output, this project uses relative assets so it works under the repository path and custom domains.
-
-## Support
-
-If this guide helped, star the repo or use the Support page on the website. Device reports and corrections are welcome through GitHub issues.
+<p align="center">
+  ⭐ <strong>Before You Go…</strong>
+</p><p align="center">
+  <a href="#">
+    <img src="https://img.shields.io/badge/⭐%20Support%20the%20Project-Leave%20a%20Star-FACC15?style=for-the-badge&logo=github&logoColor=black"/>
+  </a>
+</p><p align="center">
+  💬 <strong>Your support keeps this project growing 🚀</strong>
+</p>
