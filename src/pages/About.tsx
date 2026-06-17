@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GitBranch, ShieldCheck, Wrench } from "lucide-react";
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
         <div className="text-sm font-semibold text-primary mb-1 uppercase tracking-wider">Help & About</div>
         <h1 className="text-4xl font-extrabold tracking-tight">About Me</h1>
         <p className="text-lg text-muted-foreground mt-2">
-          A few words about who's writing this guide.
+          Who maintains this guide, what is tested, and what still needs community reports.
         </p>
       </div>
 
@@ -16,7 +16,7 @@ export default function About() {
         <img
           src="https://avatars.githubusercontent.com/u/125804924?v=4"
           alt="Author"
-          className="w-32 h-32 rounded-2xl ring-4 ring-primary/20 shadow-lg object-cover shrink-0"
+          className="w-32 h-32 rounded-none ring-4 ring-primary/20 shadow-lg object-cover shrink-0"
         />
 
         <div className="space-y-4 prose dark:prose-invert max-w-none">
@@ -25,12 +25,30 @@ export default function About() {
           </p>
 
           <p className="text-lg leading-relaxed text-muted-foreground m-0">
-            Everything in this guide is tested by me personally. I started on the Lenovo TB-X306X (the only one I have lying around for daily testing) and gradually expanded the device pages by collecting tips from the community as people followed the guide on their own phones.
+            I personally test what I can, but I do not own every brand listed here. The Lenovo TB-X306X is my main test device; the brand pages are maintained from official unlock pages, XDA reports, TrebleDroid/Phh history, and user feedback from people flashing their own devices.
           </p>
 
           <p className="text-base m-0">
-            If this guide helped you and you want to say thanks, the Support page is there. If you got stuck, the Get Help page has my Telegram. I usually reply within a day.
+            If something is wrong, I want the exact model, region, firmware, GSI filename, and command output. That is how this guide stays useful instead of becoming another outdated flashing blog.
           </p>
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        <div className="border border-border bg-card p-5">
+          <Wrench className="mb-3 h-6 w-6 text-primary" />
+          <h2 className="text-base font-bold">Practical first</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Commands are written for real recovery situations, not perfect lab devices.</p>
+        </div>
+        <div className="border border-border bg-card p-5">
+          <ShieldCheck className="mb-3 h-6 w-6 text-emerald-500" />
+          <h2 className="text-base font-bold">Safety over hype</h2>
+          <p className="mt-2 text-sm text-muted-foreground">If a method is risky, region-locked, paid, or outdated, the guide should say that clearly.</p>
+        </div>
+        <div className="border border-border bg-card p-5">
+          <GitBranch className="mb-3 h-6 w-6 text-sky-500" />
+          <h2 className="text-base font-bold">Community maintained</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Device-specific updates are welcome through GitHub issues or Telegram reports.</p>
         </div>
       </div>
 
