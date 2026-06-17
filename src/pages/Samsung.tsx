@@ -25,6 +25,7 @@ export default function Samsung() {
           { label: "File format", value: <><code>.tar</code> or <code>.tar.md5</code> for Odin, rarely raw <code>.img</code></> },
           { label: "Key step", value: <>Flashing exact version-matched vbmeta/recovery and using multidisabler</> },
           { label: "fastboot status", value: <>Standard bootloader fastboot is NOT supported. Limited userspace fastbootd support is highly device-dependent.</> },
+          { label: "Snapdragon / region locks", value: <>US, Canada, carrier, and some Snapdragon Galaxy models are commonly bootloader-locked even when other regional variants can unlock.</> },
           { label: "Brick recovery", value: <>Re-flash stock firmware (.tar files) via Odin</> },
           { label: "Warranty / Pay", value: <span className="text-red-600 dark:text-red-400 font-medium">Knox tripped → Samsung Pay + Secure Folder lost forever</span> },
         ]}
@@ -36,6 +37,7 @@ export default function Samsung() {
             <li><strong>Knox is forever:</strong> Unlocking the bootloader permanently trips Knox. You will permanently lose Samsung Pay, Secure Folder, Samsung Pass, and Warranty.</li>
             <li><strong>VaultKeeper:</strong> Samsung's security can unexpectedly lock the bootloader or block custom binaries if you don't boot directly to recovery after flashing.</li>
             <li><strong>Android 16 / One UI 8:</strong> Some Samsung firmware has been reported without the OEM Unlocking toggle in Developer Options. If the toggle is missing, treat the device as not unlockable and do not continue with GSI flashing.</li>
+            <li><strong>Region and chipset locks:</strong> Many US/Canada/carrier Samsung models, especially Snapdragon variants, do not allow bootloader unlocking at all. Do not follow Exynos or international-model guides unless your exact model number and CSC match.</li>
             <li><strong>Anti-Rollback (SW REV CHECK FAIL):</strong> You cannot flash older bootloaders or modems. Ensure your custom binaries and GSI are based on the correct firmware version.</li>
             <li><strong>Standard Bootloader Fastboot is Not Supported:</strong> Do not assume your Galaxy behaves like a Pixel or Xiaomi device. You cannot generally use standard fastboot commands to manipulate partitions, and even when a custom recovery exposes 'fastbootd', it is a limited userspace implementation where device detection and standard commands often fail.</li>
           </ul>
@@ -45,6 +47,7 @@ export default function Samsung() {
         <ul>
           <li>Samsung primarily uses <strong>Odin</strong> (Download Mode) instead of standard Android <strong>bootloader fastboot</strong>. While Heimdall exists for Mac/Linux, it is highly unreliable on modern Samsung devices. Use Odin on Windows whenever possible.</li>
           <li>To enter Download Mode: power off the phone, then hold <strong>Volume Down + Volume Up</strong> (varies by model) while plugging in the USB cable connected to a PC.</li>
+          <li>Bootloader unlock eligibility is model and region specific. For example, an international Exynos <code>SM-S9xxB</code> guide may not apply to a US Snapdragon <code>SM-S9xxU/U1</code>, Canadian <code>SM-S9xxW</code>, Korean <code>SM-S9xxN</code>, or carrier-branded model.</li>
           <li>Not all Samsung devices use dynamic partitions. Many older/budget Galaxy devices are A-only, while newer ones may use dynamic partitions.</li>
           <li>A custom recovery (TWRP, OrangeFox, or patched recovery) provides advanced partition access and <em>sometimes</em> exposes a limited <strong>userspace fastbootd</strong> on certain devices. However, this fastbootd support varies heavily by device model, Android version, chipset (Exynos vs Snapdragon), and the specific custom recovery implementation in use.</li>
         </ul>
@@ -53,6 +56,9 @@ export default function Samsung() {
         <p>
           In Developer Options, turn on <strong>OEM Unlocking</strong>. Note: this toggle may only appear after the phone has been online for a few days due to Samsung's VaultKeeper mechanism and anti-theft delays.
         </p>
+        <Callout type="warning" title="Check Your Exact Samsung Model First">
+          Before doing anything, compare your full model number and CSC/region. US <code>U/U1</code>, Canada <code>W</code>, many carrier-branded devices, and some Snapdragon variants are usually permanently locked. If your model cannot officially expose OEM Unlocking, there is no safe generic GSI flashing path.
+        </Callout>
         <Callout type="warning" title="Android 16 / One UI 8 OEM Unlocking Notice">
           Recent user reports for Samsung Android 16 / One UI 8 mention that <strong>OEM Unlocking</strong> may no longer appear in Developer Options on affected firmware. If it is absent after setup, internet connection, date/time sync, and the usual waiting period, there is no safe generic workaround. Do not flash a GSI unless the bootloader can be officially unlocked for your exact model and region.
         </Callout>
