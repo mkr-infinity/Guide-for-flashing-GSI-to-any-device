@@ -7,9 +7,13 @@
       // GitHub Pages SPA routing trick
       // Encodes the path into a query string and redirects to index.html
       var l = window.location;
+      var repoBase = '/Guide-for-flashing-GSI-to-any-device';
+      var isProjectPage = l.pathname.indexOf(repoBase + '/') === 0;
+      var base = isProjectPage ? repoBase : '';
+      var route = isProjectPage ? l.pathname.slice(repoBase.length + 1) : l.pathname.slice(1);
       l.replace(
-        l.protocol + '//' + l.host + l.pathname.split('/').slice(0, 1 + 1).join('/') +
-        '/?p=' + encodeURIComponent(l.pathname.slice(1) + (l.search ? '&' + l.search.slice(1) : '') + l.hash)
+        l.protocol + '//' + l.host + base +
+        '/?p=' + encodeURIComponent(route + (l.search ? '&' + l.search.slice(1) : '') + l.hash)
       );
     </script>
   </head>
