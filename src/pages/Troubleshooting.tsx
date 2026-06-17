@@ -11,9 +11,11 @@ import {
   Cable,
   HardDrive,
   HelpCircle,
+  Layers,
   Lock,
   RefreshCcw,
   Search,
+  ShieldOff,
   Wifi,
   Smartphone,
   Terminal,
@@ -71,6 +73,21 @@ const ISSUES: Issue[] = [
     ),
   },
   {
+    id: "oem-unlock-missing",
+    title: "OEM Unlocking is missing or greyed out",
+    severity: "critical",
+    icon: ShieldOff,
+    category: "Bootloader",
+    body: <>The device may be carrier-locked, region-locked, enterprise-managed, recently reset, or blocked by the OEM firmware.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Connect to the internet, set date/time automatically, and wait through any OEM anti-theft delay.</li>
+        <li>Check exact model and region. Samsung US/Canada/carrier variants, Verizon Pixels, many Vivo/Oppo models, and some carrier Motorola devices often cannot unlock.</li>
+        <li>If your OEM never exposes the toggle, stop. There is no safe generic GSI flashing path without an unlockable bootloader.</li>
+      </ul>
+    ),
+  },
+  {
     id: "no-device",
     title: "fastboot devices shows nothing",
     severity: "common",
@@ -118,6 +135,21 @@ const ISSUES: Issue[] = [
     ),
   },
   {
+    id: "super-partition",
+    title: "super partition / dynamic partition errors",
+    severity: "common",
+    icon: Layers,
+    category: "Flashing",
+    body: <>Dynamic partition devices flash the GSI inside userspace fastbootd, not always in the bootloader screen.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Run <code>fastboot reboot fastboot</code> and confirm <code>fastboot getvar is-userspace</code> returns <code>yes</code>.</li>
+        <li>Use the latest Android SDK Platform-Tools. Old fastboot builds misreport dynamic partitions.</li>
+        <li>If the image is too large, delete only safe logical partitions such as <code>product</code>, <code>product_a</code>, or <code>product_b</code> when your device guide says it is safe.</li>
+      </ul>
+    ),
+  },
+  {
     id: "wifi-bt",
     title: "Wi-Fi / Bluetooth / mobile data not working",
     severity: "common",
@@ -150,17 +182,60 @@ const ISSUES: Issue[] = [
   },
   {
     id: "banking",
-    title: "Banking apps / Google Pay / BGMI refuse to open",
+    title: "Banking apps / Wallet / games refuse to open",
     severity: "common",
     icon: Lock,
     category: "After Boot",
-    body: <>Those apps check for an unmodified system (SafetyNet / Play Integrity). After flashing a GSI you'll fail those checks.</>,
+    body: <>Those apps check device integrity using Play Integrity and their own anti-tamper rules. After flashing a GSI, many devices fail at least one check.</>,
     fix: (
       <ul className="list-disc pl-5 space-y-1.5">
-        <li>Install <strong>Magisk</strong> + the <strong>Play Integrity Fix</strong> module via LSPosed.</li>
-        <li>Try <strong>Universal SafetyNet Fix</strong> (older but still works for some apps).</li>
-        <li>Some banks (Indian, Chinese, EU) are now strict enough that nothing reliably bypasses them. Worth knowing before flashing.</li>
-        <li>BGMI / Free Fire have their own anti-cheat — you may get banned even with passing integrity checks.</li>
+        <li>Do not flash a GSI on a daily banking phone unless you accept losing wallet and banking access.</li>
+        <li>Magisk modules change often and may stop working without warning. I do not recommend relying on bypasses for important payments.</li>
+        <li>Some banks and games use hardware-backed or server-side checks that no generic fix can reliably bypass.</li>
+        <li>Games with anti-cheat can ban modified devices even when Play Integrity appears to pass.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "volte-ims",
+    title: "VoLTE / VoWiFi / carrier calling broken",
+    severity: "common",
+    icon: Smartphone,
+    category: "After Boot",
+    body: <>IMS, VoLTE, and VoWiFi depend on vendor blobs, carrier configs, and OEM framework pieces that a generic system may not include.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Check whether your GSI has IMS compatibility notes for your chipset or vendor.</li>
+        <li>Try a GSI from the same Android generation as your stock vendor firmware.</li>
+        <li>If your country requires VoLTE for calls, test with a spare SIM before daily use.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "invalid-sparse",
+    title: "Invalid sparse file format warning",
+    severity: "cosmetic",
+    icon: Terminal,
+    category: "Commands",
+    body: <>Fastboot may print an "Invalid sparse file format at header magic" message before continuing to flash chunks.</>,
+    fix: (
+      <p>
+        If the command continues and ends with <code>OKAY</code> / <code>Finished</code>, it is usually harmless. If it stops with <code>FAILED</code>, update platform-tools and re-download the GSI to rule out corruption.
+      </p>
+    ),
+  },
+  {
+    id: "nvram-imei",
+    title: "IMEI missing / baseband unknown after MTK flashing",
+    severity: "critical",
+    icon: AlertOctagon,
+    category: "Flashing",
+    body: <>MediaTek tools can erase NVRAM/NVDATA/calibration partitions if you use broad format options.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Never use SP Flash Tool <strong>Format All + Download</strong> unless you already backed up NVRAM/NVDATA and know how to restore IMEI legally.</li>
+        <li>Prefer Download Only or firmware-specific restore instructions from your device thread.</li>
+        <li>If it already happened, stop flashing and look for your exact model's NVRAM restore guide.</li>
       </ul>
     ),
   },
@@ -276,7 +351,7 @@ export default function Troubleshooting() {
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                "px-4 h-11 rounded-md text-sm font-medium border transition-colors capitalize",
+                "px-4 h-11 rounded-none text-sm font-medium border transition-colors capitalize",
                 filter === f
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card hover:bg-muted border-border text-foreground/70"
@@ -296,7 +371,7 @@ export default function Troubleshooting() {
           return (
             <Card key={s} className={cn("border-2", conf.cardClass)}>
               <CardContent className="p-4 text-center">
-                <div className={cn("inline-flex text-xs font-bold px-2 py-0.5 rounded-full border mb-2", conf.chipClass)}>
+                <div className={cn("inline-flex text-xs font-bold px-2 py-0.5 rounded-none border mb-2", conf.chipClass)}>
                   {conf.label}
                 </div>
                 <div className="text-2xl font-extrabold">{count}</div>
@@ -326,19 +401,19 @@ export default function Troubleshooting() {
                 key={issue.id}
                 value={issue.id}
                 className={cn(
-                  "rounded-xl border-2 bg-card shadow-sm overflow-hidden transition-colors",
+                  "rounded-none border-2 bg-card shadow-sm overflow-hidden transition-colors",
                   conf.cardClass,
                 )}
               >
                 <AccordionTrigger className="hover:no-underline px-5 py-4 [&[data-state=open]]:bg-muted/30">
                   <div className="flex items-center gap-4 flex-1 min-w-0 text-left">
-                    <div className={cn("h-10 w-10 shrink-0 rounded-lg flex items-center justify-center", conf.iconClass)}>
+                    <div className={cn("h-10 w-10 shrink-0 rounded-none flex items-center justify-center", conf.iconClass)}>
                       <Icon className="h-5 w-5" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="font-semibold text-base text-foreground truncate">{issue.title}</div>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className={cn("text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border", conf.chipClass)}>
+                        <span className={cn("text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-none border", conf.chipClass)}>
                           {conf.label}
                         </span>
                         <span className="text-xs text-muted-foreground">{issue.category}</span>
