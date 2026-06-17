@@ -46,10 +46,6 @@ export default function Overview() {
         </div>
       </section>
 
-      <div className="overflow-hidden border border-border shadow-md">
-        <img src={heroFlash} alt="Android flashing illustration" className="w-full h-auto block" />
-      </div>
-
       <section>
         <h2 className="text-2xl font-bold tracking-tight mb-2">Pre-Flash Reality Check</h2>
         <p className="text-muted-foreground mb-4">If any of these fail, stop and fix that first. A GSI is only safe when the basics are confirmed.</p>
