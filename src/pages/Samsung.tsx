@@ -19,7 +19,7 @@ export default function Samsung() {
         difficulty="Hard"
         difficultyNote="Knox tripping is permanent, heavily fragmented partition structures"
         rows={[
-          { label: "Unlock method", value: <>Download mode + Volume Up confirm (VaultKeeper / 7-day wait may apply)</> },
+          { label: "Unlock method", value: <>Developer Options OEM Unlocking, then Download Mode + Volume Up confirm. On Android 16 / One UI 8, this toggle may be missing on some firmware.</> },
           { label: "Flash tool", value: <><strong>Odin</strong> (Windows) is preferred. Heimdall is unreliable on modern models.</> },
           { label: "File format", value: <><code>.tar</code> or <code>.tar.md5</code> for Odin, rarely raw <code>.img</code></> },
           { label: "Key step", value: <>Flashing exact version-matched vbmeta/recovery and using multidisabler</> },
@@ -34,6 +34,7 @@ export default function Samsung() {
           <ul className="mt-2 mb-0 space-y-1">
             <li><strong>Knox is forever:</strong> Unlocking the bootloader permanently trips Knox. You will permanently lose Samsung Pay, Secure Folder, Samsung Pass, and Warranty.</li>
             <li><strong>VaultKeeper:</strong> Samsung's security can unexpectedly lock the bootloader or block custom binaries if you don't boot directly to recovery after flashing.</li>
+            <li><strong>Android 16 / One UI 8:</strong> Some Samsung firmware has been reported without the OEM Unlocking toggle in Developer Options. If the toggle is missing, treat the device as not unlockable and do not continue with GSI flashing.</li>
             <li><strong>Anti-Rollback (SW REV CHECK FAIL):</strong> You cannot flash older bootloaders or modems. Ensure your custom binaries and GSI are based on the correct firmware version.</li>
             <li><strong>Standard Bootloader Fastboot is Not Supported:</strong> Do not assume your Galaxy behaves like a Pixel or Xiaomi device. You cannot generally use standard fastboot commands to manipulate partitions, and even when a custom recovery exposes 'fastbootd', it is a limited userspace implementation where device detection and standard commands often fail.</li>
           </ul>
@@ -51,6 +52,9 @@ export default function Samsung() {
         <p>
           In Developer Options, turn on <strong>OEM Unlocking</strong>. Note: this toggle may only appear after the phone has been online for a few days due to Samsung's VaultKeeper mechanism and anti-theft delays.
         </p>
+        <Callout type="warning" title="Android 16 / One UI 8 OEM Unlocking Notice">
+          Recent user reports for Samsung Android 16 / One UI 8 mention that <strong>OEM Unlocking</strong> may no longer appear in Developer Options on affected firmware. If it is absent after setup, internet connection, date/time sync, and the usual waiting period, there is no safe generic workaround. Do not flash a GSI unless the bootloader can be officially unlocked for your exact model and region.
+        </Callout>
         <p>
           Once enabled, power off the phone. Boot to Download Mode and hold <strong>Volume Up</strong> when prompted to unlock the bootloader. The phone will wipe all userdata. Go through initial setup, connect to Wi-Fi, and re-enable Developer Options to verify OEM Unlocking is still present and greyed out.
         </p>
