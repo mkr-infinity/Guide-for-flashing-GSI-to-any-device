@@ -16,6 +16,7 @@ export default function Vivo() {
       <BrandSpec
         difficulty="Mostly Locked"
         difficultyNote="Most retail models cannot be unlocked"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <span className="text-red-600 dark:text-red-400 font-medium">No official method for retail Vivo / iQOO global models</span> },
           { label: "Exception", value: <>A few <strong>India-only iQOO</strong> models have community unlock tools (XDA model thread)</> },
