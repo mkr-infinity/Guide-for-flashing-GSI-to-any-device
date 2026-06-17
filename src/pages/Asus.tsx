@@ -18,8 +18,8 @@ export default function Asus() {
         difficultyNote="Older models easy, newer models stuck"
         lastUpdated="June 17, 2026"
         rows={[
-          { label: "Unlock method", value: <><strong>Asus Unlock Device App</strong> APK from official support page</> },
-          { label: "Newer models", value: <span className="text-red-600 dark:text-red-400 font-medium">ROG Phone 8 / Zenfone 11 — unlock app removed in 2023+</span> },
+          { label: "Unlock method", value: <>Older models used the <strong>Asus Unlock Device App</strong>; verify your exact support page first</> },
+          { label: "Newer models", value: <span className="text-red-600 dark:text-red-400 font-medium">Unlock app availability has been inconsistent since 2023; do not assume ROG/Zenfone 8+ can unlock</span> },
           { label: "Tencent China models", value: <span className="text-red-600 dark:text-red-400 font-medium">Locked permanently — no unlock path</span> },
           { label: "vbmeta partitions", value: <><code>vbmeta</code> + <code>vbmeta_system</code> on ROG 5+</> },
           { label: "Brick recovery", value: <>Raw <code>.zip</code> firmware on Asus support page → flash via fastboot</> },
@@ -29,7 +29,7 @@ export default function Asus() {
 
       <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="The Asus unlock app got pulled">
-          Asus used to ship a "Unlock Device App" you'd download from their website. As of late 2023, they've removed it for newer ROG and Zenfone models — meaning some recent devices (ROG Phone 8, Zenfone 11) are not officially unlockable yet. Older models still work fine. Check XDA for your exact model first.
+          Asus used to ship an "Unlock Device App" on model support pages. Since 2023 its availability has been inconsistent, especially for newer ROG Phone and Zenfone models. If your support page and XDA thread do not show a working unlock method for your exact variant, treat it as locked.
         </Callout>
 
         <h3>Step 1 — Get the Unlock App (older models only)</h3>
