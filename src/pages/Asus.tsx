@@ -16,6 +16,7 @@ export default function Asus() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Older models easy, newer models stuck"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <><strong>Asus Unlock Device App</strong> APK from official support page</> },
           { label: "Newer models", value: <span className="text-red-600 dark:text-red-400 font-medium">ROG Phone 8 / Zenfone 11 — unlock app removed in 2023+</span> },
