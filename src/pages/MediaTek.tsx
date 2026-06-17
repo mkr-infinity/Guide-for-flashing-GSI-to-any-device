@@ -22,8 +22,8 @@ export default function MediaTek() {
           { label: "Flash tool", value: <><strong>SP Flash Tool</strong> (SmartPhone Flash Tool) — replaces fastboot on most MTK devices</> },
           { label: "Required files", value: <><strong>scatter file</strong> (<code>MT6xxx_Android_scatter.txt</code>) + the partition images you want to flash</> },
           { label: "Mode for flashing", value: <><strong>BROM</strong> (Boot ROM) mode — hold Volume Up + Volume Down + plug in cable while phone is OFF</> },
-          { label: "Auth file", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Newer MTK chips (MT6789+) require a paid AUTH file from the OEM</span> },
-          { label: "Brick recovery", value: <strong>SP Flash Tool's "Format All + Download" mode is nearly unbrickable</strong> },
+          { label: "Auth / loader", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Newer patched BootROM / V6 chips may need a proper loader or OEM AUTH file</span> },
+          { label: "Brick recovery", value: <strong>SP Flash Tool / mtkclient can recover many devices, but broad formatting can erase IMEI data</strong> },
           { label: "Treble check first", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Many cheap MTK phones ship without Treble — verify with Treble Check app</span> },
         ]}
       />
@@ -70,8 +70,8 @@ fastboot flashing unlock`}
           But many require an extra step first: a community tool called <strong>MTK Auth Bypass</strong> or <strong>mtkclient</strong> (<a href="https://github.com/bkerler/mtkclient" target="_blank" rel="noreferrer">github.com/bkerler/mtkclient</a>) which talks directly to BROM and skips the OEM's lockout. Worth bookmarking — it's the secret weapon for any "fastboot oem unlock returns FAILED" situation on MTK.
         </p>
 
-        <Callout type="warning" title="Newer MTK chips need an AUTH file">
-          On MT6789, MT6877, Dimensity 8200/9200 and newer, MediaTek added a Secure Boot layer. SP Flash Tool will refuse to flash without a per-device <strong>AUTH file</strong> signed by the OEM. These leak occasionally on XDA but are usually paid (~$10–$30) on community sites. If your phone needs one and you can't get it, sadly you're out of luck.
+        <Callout type="warning" title="Newer MTK chips may need loaders or AUTH">
+          mtkclient notes that newer V6/protected chipsets can require preloader mode plus a proper loader instead of the old BootROM path. SP Flash Tool may also require an OEM-signed AUTH file. If your tool asks for AUTH or a loader you do not have, stop and find a model-specific thread.
         </Callout>
 
         <h3>Step 4 — Flash the GSI</h3>
@@ -91,7 +91,7 @@ fastboot reboot`}
 
         <h3>If anything goes wrong</h3>
         <p>
-          The single biggest advantage of MediaTek devices: <strong>SP Flash Tool's "Format All + Download" mode is essentially unbrickable</strong>. As long as BROM mode still responds (and it almost always does, even on a phone that won't power on), you can wipe everything and re-flash stock from a scatter file. This is why a lot of advanced flashers actually <em>prefer</em> MTK devices for experimenting.
+          The single biggest advantage of MediaTek devices: hardware-level recovery often still works when Android and fastboot are broken. But do not casually use <strong>Format All + Download</strong>; it can erase NVRAM/NVDATA, IMEI, radio calibration, and Widevine-related data. Prefer Download Only and back up critical partitions first.
         </p>
 
         <Callout type="tip" title="Where to find stock firmware + scatter">
