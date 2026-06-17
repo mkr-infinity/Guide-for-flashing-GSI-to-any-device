@@ -21,6 +21,7 @@ export default function Motorola() {
           { label: "Unlock method", value: <>Get unique unlock key by email from Motorola's official site</> },
           { label: "Get device ID", value: <><code>fastboot oem get_unlock_data</code> → paste on Motorola site</> },
           { label: "Apply unlock", value: <><code>fastboot oem unlock UNIQUE_KEY_FROM_EMAIL</code></> },
+          { label: "Eligibility", value: <>Motorola decides by model/IMEI; if their portal refuses the code, do not force community unlock tools</> },
           { label: "Critical unlock", value: <>Some models also need <code>fastboot flashing unlock_critical</code></> },
           { label: "vbmeta partitions", value: <>Just <code>vbmeta</code> — clean and simple</> },
           { label: "Brick recovery", value: <><strong>Motorola Rescue Tool</strong> + lolinet firmware = unbrickable</> },
@@ -61,7 +62,7 @@ fastboot reboot`}
         </Callout>
 
         <Callout type="warning" title="Some models lock down later">
-          A few US carrier-locked Motorola models (Verizon, mostly) cannot be unlocked at all. Check Motorola's site — if it says your IMEI isn't eligible, sadly you're out of luck.
+          Motorola's own unlock flow is model/IMEI based and warns that carrier rules may still apply. A few US carrier-locked Motorola models (Verizon, mostly) cannot be unlocked at all. If Motorola's portal says your device is not eligible, treat it as locked.
         </Callout>
 
         <Callout type="tip" title="Stock firmware is easy to recover">
