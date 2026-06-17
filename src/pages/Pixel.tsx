@@ -19,6 +19,7 @@ export default function Pixel() {
         lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Single command: <code>fastboot flashing unlock</code></> },
+          { label: "Carrier warning", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Verizon / some carrier Pixels usually cannot enable OEM unlocking</span> },
           { label: "vbmeta needed?", value: <>Often <strong>not required</strong> — Pixels accept GSIs directly</> },
           { label: "Flash command", value: <>Plain <code>fastboot flash system GSI.img</code> in fastbootd — no slot tricks</> },
           { label: "Pixel 6+ (Tensor)", value: <>Needs Android 13+ A/B GSI — older builds won't boot</> },
@@ -36,6 +37,9 @@ export default function Pixel() {
         <p>
           Settings → About phone → tap Build number 7 times. Then Settings → System → Developer options → turn on <strong>OEM unlocking</strong>. (Make sure you're connected to the internet — Google checks server-side that your account isn't carrier-locked.)
         </p>
+        <Callout type="warning" title="Carrier Pixels can be permanently locked">
+          If OEM unlocking is greyed out on a Verizon or carrier-sold Pixel, do not continue. Retail unlocked Pixels are excellent for GSIs; carrier-locked Pixels are not.
+        </Callout>
 
         <h3>Step 2 — Unlock the bootloader</h3>
         <CodeBlock
@@ -60,7 +64,7 @@ fastboot reboot`}
         />
 
         <Callout type="note" title="Pixel 6 / 7 / 8 / 9 and Tensor specifics">
-          Tensor-based Pixels (Pixel 6 onward) need slightly newer GSIs (Android 13+ A/B layout). Make sure your GSI is built for Android 13 or higher — older GSIs may not boot.
+          Tensor-based Pixels (Pixel 6 onward) need modern 64-bit A/B GSIs. Prefer a GSI Android version close to your current stock vendor firmware; very old GSIs may not boot cleanly on Tensor devices.
         </Callout>
 
         <Callout type="tip" title="You can re-lock after">
