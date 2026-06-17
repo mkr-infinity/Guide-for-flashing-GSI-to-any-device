@@ -24,7 +24,7 @@ export default function Oppo() {
           { label: "Newer OnePlus", value: <>Bootloader unlock may still work, but EDL/MSM unbrick access is less public and often auth-gated</> },
           { label: "vbmeta partitions", value: <><code>vbmeta</code> alone usually — OnePlus 9+ adds <code>vbmeta_system</code></> },
           { label: "Free space trick", value: <><code>fastboot delete-logical-partition product_a</code> for ColorOS 13+</> },
-          { label: "Brick recovery (OP)", value: <><strong>MSMDownloadTool</strong> (XDA leaks) — full EDL restore</> },
+          { label: "Brick recovery (OP)", value: <>Older models: leaked <strong>MSMDownloadTool</strong>; newer models: verify model-specific auth/payload recovery first</> },
           { label: "Brick recovery (Realme)", value: <>Realme UI flash via QFIL / EDL — find on community sites</> },
         ]}
       />
