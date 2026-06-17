@@ -43,7 +43,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
         <button
           type="button"
           onClick={() => setIsCollapsed(true)}
-          className="hidden lg:flex items-center justify-center w-7 h-7 rounded-md text-sidebar-foreground/40 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors shrink-0"
+          className="hidden lg:flex items-center justify-center w-7 h-7 rounded-none text-sidebar-foreground/40 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors shrink-0"
           title="Collapse sidebar"
         >
           <PanelLeftClose className="w-4 h-4" />
@@ -68,7 +68,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
                   key={section.id}
                   href={section.path}
                   className={cn(
-                    "flex items-center w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                    "flex items-center w-full text-left px-3 py-2 rounded-none text-sm font-medium transition-colors",
                     isActive
                       ? "bg-sidebar-primary/10 text-sidebar-primary font-semibold"
                       : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground"
@@ -89,7 +89,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
                   {BrandIcon && (
                     <span
                       className={cn(
-                        "flex items-center justify-center w-6 h-6 rounded-md mr-3 shrink-0 transition-colors",
+                        "flex items-center justify-center w-6 h-6 rounded-none mr-3 shrink-0 transition-colors",
                         isActive
                           ? "bg-sidebar-primary/15 text-sidebar-primary"
                           : "bg-sidebar-foreground/5 text-sidebar-foreground/80"
@@ -112,7 +112,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
           href="https://github.com/mkr-infinity"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 p-2 rounded-lg hover:bg-sidebar-accent transition-colors group"
+          className="flex items-center gap-3 p-2 rounded-none hover:bg-sidebar-accent transition-colors group"
         >
           <img
             src="https://avatars.githubusercontent.com/u/125804924?v=4"
@@ -169,7 +169,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
           <button
             type="button"
             onClick={() => setIsCollapsed(false)}
-            className="flex items-center justify-center w-8 h-8 rounded-md text-sidebar-foreground/50 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-none text-sidebar-foreground/50 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors"
             title="Expand sidebar"
           >
             <PanelLeftOpen className="w-4 h-4" />

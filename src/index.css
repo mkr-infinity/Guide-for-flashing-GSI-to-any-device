@@ -116,7 +116,7 @@
   --app-font-serif: Georgia, serif;
   --app-font-mono: 'JetBrains Mono', monospace;
   --app-font-display: 'Space Grotesk', sans-serif;
-  --radius: 0.5rem; 
+  --radius: 0rem; 
   --shadow-2xs: 0 1px 2px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.05);
   --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
@@ -330,7 +330,7 @@
     @apply text-primary font-medium decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary;
   }
   .prose code {
-    @apply font-mono text-primary bg-primary/10 px-[0.3rem] py-[0.1rem] rounded-md text-[0.85em] border border-primary/15 font-semibold;
+    @apply font-mono text-primary bg-primary/10 px-[0.3rem] py-[0.1rem] rounded-none text-[0.85em] border border-primary/15 font-semibold;
   }
   .prose code::before, .prose code::after {
     display: none;

@@ -87,7 +87,7 @@ function AppContent() {
                 rel="noopener noreferrer"
                 aria-label="Report a mistake or issue on GitHub"
                 title="Report a mistake or issue"
-                className="hidden md:inline-flex group items-center gap-2 h-9 px-3.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300
+                className="hidden md:inline-flex group items-center gap-2 h-9 px-3.5 rounded-none text-[11px] font-bold uppercase tracking-wider transition-all duration-300
                   text-red-700 dark:text-red-400 
                   bg-red-500/10 hover:bg-red-500/20 
                   border border-red-500/30 hover:border-red-500/50 hover:shadow-[0_0_15px_-3px_rgba(239,68,68,0.3)]"
@@ -100,7 +100,7 @@ function AppContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Support me"
-                className="group relative inline-flex items-center justify-center gap-2 h-9 px-5 rounded-lg text-[11px] font-extrabold uppercase tracking-widest transition-all duration-500
+                className="group relative inline-flex items-center justify-center gap-2 h-9 px-5 rounded-none text-[11px] font-extrabold uppercase tracking-widest transition-all duration-500
                   text-yellow-950 dark:text-yellow-950
                   bg-gradient-to-r from-yellow-400 to-amber-400 hover:from-yellow-300 hover:to-amber-300
                   shadow-md shadow-yellow-500/20 hover:shadow-lg hover:shadow-yellow-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 overflow-hidden ring-1 ring-yellow-500/50"
@@ -153,7 +153,7 @@ function AppContent() {
                 <button
                   type="button"
                   onClick={() => setLocation(prevSection.path)}
-                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] text-left rounded-xl border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
+                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] text-left rounded-none border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <span className="block text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mb-1.5 transition-colors group-hover:text-foreground/70">
@@ -171,7 +171,7 @@ function AppContent() {
                 <button
                   type="button"
                   onClick={() => setLocation(nextSection.path)}
-                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] sm:ml-auto text-right rounded-xl border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
+                  className="group relative w-full sm:w-auto sm:flex-1 max-w-[280px] sm:ml-auto text-right rounded-none border border-border/60 bg-sidebar/30 px-6 py-5 transition-all hover:bg-sidebar hover:border-border hover:shadow-lg hover:-translate-y-0.5 overflow-hidden"
                 >
                    <div className="absolute inset-0 bg-gradient-to-l from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <span className="block text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mb-1.5 transition-colors group-hover:text-primary/70">

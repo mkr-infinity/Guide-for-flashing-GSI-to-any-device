@@ -18,12 +18,12 @@ export function CodeBlock({ code, language = "bash", showLineNumbers = false }: 
   };
 
   return (
-    <div className="relative group rounded-xl bg-zinc-950 dark:bg-black/40 border border-zinc-800 dark:border-border overflow-hidden my-6 shadow-md text-zinc-50">
+    <div className="relative group rounded-none bg-zinc-950 dark:bg-black/40 border border-zinc-800 dark:border-border overflow-hidden my-6 shadow-md text-zinc-50">
       <div className="flex items-center justify-between px-4 py-2 bg-zinc-900/80 dark:bg-sidebar border-b border-zinc-800 dark:border-border">
         <span className="text-xs font-mono font-medium text-zinc-400 dark:text-muted-foreground uppercase tracking-wider">{language}</span>
         <button
           className={cn(
-            "flex items-center gap-1.5 h-7 px-2 rounded-md text-xs font-medium transition-colors border",
+            "flex items-center gap-1.5 h-7 px-2 rounded-none text-xs font-medium transition-colors border",
             copied 
               ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" 
               : "text-zinc-400 dark:text-muted-foreground bg-transparent border-transparent hover:bg-zinc-800 dark:hover:bg-muted hover:text-zinc-100 dark:hover:text-foreground hover:border-zinc-700 dark:hover:border-border"

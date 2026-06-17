@@ -22,14 +22,14 @@ const difficultyStyles: Record<string, string> = {
 
 export function BrandSpec({ rows, difficulty, difficultyNote }: BrandSpecProps) {
   return (
-    <Card className="not-prose mb-10 border-border bg-sidebar/50 shadow-sm overflow-hidden backdrop-blur-sm rounded-xl">
+    <Card className="not-prose mb-10 border-border bg-sidebar/50 shadow-sm overflow-hidden backdrop-blur-sm rounded-none">
       <CardContent className="p-0">
         <div className="px-5 py-4 bg-sidebar border-b border-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="text-xs uppercase tracking-widest font-bold text-muted-foreground">
             Brand specifications
           </div>
           {difficulty && (
-            <div className={cn("inline-flex w-fit text-[11px] font-bold px-2.5 py-1 rounded-md border uppercase tracking-wider", difficultyStyles[difficulty])}>
+            <div className={cn("inline-flex w-fit text-[11px] font-bold px-2.5 py-1 rounded-none border uppercase tracking-wider", difficultyStyles[difficulty])}>
               {difficulty}
               {difficultyNote && <span className="ml-2 font-medium opacity-80 normal-case tracking-normal border-l border-current pl-2"> {difficultyNote}</span>}
             </div>
@@ -41,7 +41,7 @@ export function BrandSpec({ rows, difficulty, difficultyNote }: BrandSpecProps) 
               <div className="font-semibold text-muted-foreground text-xs sm:text-sm mt-0.5">
                 {row.label}
               </div>
-              <div className="text-foreground/90 font-medium [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:bg-muted [&_code]:rounded-md [&_code]:border [&_code]:border-border/50 [&_code]:text-[0.85em] [&_code]:font-mono [&_code]:font-semibold [&_code]:text-primary">
+              <div className="text-foreground/90 font-medium [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:bg-muted [&_code]:rounded-none [&_code]:border [&_code]:border-border/50 [&_code]:text-[0.85em] [&_code]:font-mono [&_code]:font-semibold [&_code]:text-primary">
                 {row.value}
               </div>
             </div>

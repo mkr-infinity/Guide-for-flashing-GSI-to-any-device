@@ -42,8 +42,8 @@ export function Callout({ type, title, children }: CalloutProps) {
   const { icon: Icon, classes, iconBg, titleColor, defaultTitle } = config[type];
 
   return (
-    <div className={cn("my-6 flex gap-4 rounded-xl border p-5 shadow-sm backdrop-blur-md", classes)}>
-      <div className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg mt-0.5", iconBg)}>
+    <div className={cn("my-6 flex gap-4 rounded-none border p-5 shadow-sm backdrop-blur-md", classes)}>
+      <div className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-none mt-0.5", iconBg)}>
         <Icon className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">
