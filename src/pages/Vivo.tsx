@@ -20,6 +20,7 @@ export default function Vivo() {
         rows={[
           { label: "Unlock method", value: <span className="text-red-600 dark:text-red-400 font-medium">No official method for retail Vivo / iQOO global models</span> },
           { label: "Exception", value: <>A few <strong>India-only iQOO</strong> models have community unlock tools (XDA model thread)</> },
+          { label: "OriginOS / China", value: <>China firmware can be even stricter; do not assume Funtouch and OriginOS instructions match</> },
           { label: "Fastboot trigger", value: <>Volume Up + Power (only works if unlocked)</> },
           { label: "vbmeta partitions", value: <>Often <code>vbmeta_a</code> / <code>vbmeta_b</code> instead of plain <code>vbmeta</code></> },
           { label: "Slot quirk", value: <>Check active slot with <code>fastboot getvar current-slot</code> first</> },
@@ -30,6 +31,10 @@ export default function Vivo() {
       <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Most Vivo / iQOO phones cannot be officially unlocked">
           Vivo, like Oppo, generally does not provide a way to unlock the bootloader for retail devices. There is no "fastboot oem unlock" that just works. This means GSI flashing is <strong>not possible</strong> on most Vivo / iQOO phones unless someone in the community has reverse-engineered an unlock method for your specific model.
+        </Callout>
+
+        <Callout type="warning" title="Do not mix Funtouch OS and OriginOS advice">
+          Vivo/iQOO firmware differs heavily by region. India/global Funtouch OS threads often do not apply to China OriginOS devices, even when the hardware name looks similar.
         </Callout>
 
         <h3>Before you start: check XDA</h3>
