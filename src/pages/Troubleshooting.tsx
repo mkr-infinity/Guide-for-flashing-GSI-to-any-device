@@ -6,11 +6,15 @@ import { Input } from "@/components/ui/input";
 import {
   AlertOctagon,
   Battery,
+  Bluetooth,
   Bug,
   Camera,
   Cable,
+  Fingerprint,
   HardDrive,
+  Headphones,
   HelpCircle,
+  MonitorUp,
   Layers,
   Lock,
   RefreshCcw,
@@ -18,7 +22,9 @@ import {
   ShieldOff,
   Wifi,
   Smartphone,
+  Sun,
   Terminal,
+  Volume2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -162,6 +168,154 @@ const ISSUES: Issue[] = [
         <li>Try a different GSI build for your architecture (often a different vendor patch helps).</li>
         <li>Search "<em>[your phone codename] GSI</em>" on XDA — your model may need a specific vendor patch.</li>
         <li>For mobile data: re-enter your APN settings manually after flashing.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "call-audio",
+    title: "No sound during phone calls",
+    severity: "common",
+    icon: Volume2,
+    category: "After Boot",
+    body: <>TrebleDroid reports this as a common GSI audio-route issue, usually fixable from Phh settings.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Open Settings → Phh Treble Settings → Misc and try disabling <strong>A2DP offload</strong>, then reboot.</li>
+        <li>If calls still have no audio, enable <strong>Disable "Voice Call In" route</strong> in Phh settings → Misc, then reboot.</li>
+        <li>If your GSI does not include Phh settings, try a TrebleDroid/Phh-based build for testing.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "low-brightness",
+    title: "Maximum brightness is too low",
+    severity: "cosmetic",
+    icon: Sun,
+    category: "Display",
+    body: <>Some vendors expose a different backlight scale than the generic system expects.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Enable <strong>alternate backlight scale</strong> in Phh settings.</li>
+        <li>Enable <strong>linear brightness slider</strong> in Phh settings and reboot.</li>
+        <li>On Qualcomm devices, TrebleDroid lists this command as another option: <code>adb shell setprop persist.sys.qcom-brightness $(cat /sys/class/leds/lcd-backlight/max_brightness)</code></li>
+      </ul>
+    ),
+  },
+  {
+    id: "wired-headphones",
+    title: "Wired headphones are not detected",
+    severity: "common",
+    icon: Headphones,
+    category: "Audio",
+    body: <>Jack detection can be vendor-specific and may not map cleanly to a generic system.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Enable <strong>alternative headphones detection</strong> in Phh settings and reboot.</li>
+        <li>TrebleDroid also lists: <code>adb shell setprop persist.sys.overlay.devinputjack true</code></li>
+        <li>If USB-C audio works but 3.5 mm does not, it is likely a vendor detection quirk.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "fingerprint-settings-crash",
+    title: "Fingerprint settings crash when opened",
+    severity: "common",
+    icon: Fingerprint,
+    category: "After Boot",
+    body: <>TrebleDroid documents a Setup Wizard conflict that can crash the fingerprint enrollment screen.</>,
+    fix: (
+      <p>
+        Go to Settings → Apps → Show system apps, then disable <code>com.google.android.setupwizard</code> / Android Setup. Reboot and open fingerprint settings again.
+      </p>
+    ),
+  },
+  {
+    id: "fingerprint-missing",
+    title: "Fingerprint sensor is not detected",
+    severity: "common",
+    icon: Fingerprint,
+    category: "After Boot",
+    body: <>Some sensors need Phh cleanup behavior disabled to stay visible on GSIs.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Try: <code>adb shell setprop persist.sys.phh.fingerprint.nocleanup true</code></li>
+        <li>Reboot after setting it.</li>
+        <li>If enrollment works but unlock fails, search your codename for a vendor fingerprint patch.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "refresh-rate",
+    title: "90 Hz / 120 Hz refresh rate not working",
+    severity: "cosmetic",
+    icon: MonitorUp,
+    category: "Display",
+    body: <>High refresh modes often need an OEM display service or a Phh override.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Try <strong>force FPS / force refresh rate</strong> in Phh settings.</li>
+        <li>On some Oppo/Realme/OnePlus devices, TrebleDroid lists <code>adb shell -c service call SurfaceFlinger 1035 i32 0</code>, but use it cautiously and only if your device thread confirms it.</li>
+        <li>If the panel stays at 60 Hz, it may require an OEM framework feature the GSI does not include.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "bluetooth-drop",
+    title: "Bluetooth connects then disconnects",
+    severity: "common",
+    icon: Bluetooth,
+    category: "After Boot",
+    body: <>Bluetooth audio offload can break on generic systems.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Disable <strong>A2DP offload</strong> in Phh settings, then reboot.</li>
+        <li>Forget and re-pair the Bluetooth device after reboot.</li>
+        <li>If SystemUI crashes when Bluetooth media starts, disable Settings → Sound & vibration → Media → <strong>Show media recommendations</strong>.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "aod",
+    title: "Always-on display is missing",
+    severity: "cosmetic",
+    icon: Smartphone,
+    category: "Display",
+    body: <>AOD support depends on display/vendor features and is often hidden by default on GSIs.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Enable <strong>Force always on display</strong> in Phh settings → Misc.</li>
+        <li>Reboot, then check lock screen display settings again.</li>
+        <li>If your panel is not OLED, leave AOD off to avoid battery drain.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "restricted-networking",
+    title: "Wi-Fi and mobile data connect but no internet",
+    severity: "common",
+    icon: Wifi,
+    category: "After Boot",
+    body: <>TrebleDroid documents Android restricted networking mode as one possible cause.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Run: <code>adb shell settings put global restricted_networking_mode 0</code></li>
+        <li>Toggle airplane mode or reboot.</li>
+        <li>If only mobile data is broken, re-enter APN settings manually.</li>
+      </ul>
+    ),
+  },
+  {
+    id: "uncertified-device",
+    title: "Play Store says device is not certified",
+    severity: "common",
+    icon: Lock,
+    category: "After Boot",
+    body: <>TrebleDroid FAQ lists Google Services Framework registration as a workaround for uncertified-device warnings.</>,
+    fix: (
+      <ul className="list-disc pl-5 space-y-1.5">
+        <li>Install an app that shows the Google Services Framework ID, such as Get ID from F-Droid.</li>
+        <li>Register the GSF ID at <a href="https://www.google.com/android/uncertified/" target="_blank" rel="noreferrer">google.com/android/uncertified</a>.</li>
+        <li>Reboot and wait. This does not guarantee Play Integrity or banking apps will pass.</li>
       </ul>
     ),
   },
