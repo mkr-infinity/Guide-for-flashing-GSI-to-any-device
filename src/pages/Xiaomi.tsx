@@ -16,6 +16,7 @@ export default function Xiaomi() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Wait 7-30 days for unlock"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Official <strong>Mi Unlock tool</strong> (Windows-only) after Mi Account binding</> },
           { label: "Wait time", value: <>168 hours (7 days) minimum, sometimes 30 days for newer models</> },
