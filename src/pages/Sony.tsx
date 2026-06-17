@@ -16,6 +16,7 @@ export default function Sony() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Easy unlock, painful camera trade-off"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Eligibility check", value: <>Dial <code>*#*#7378423#*#*</code> → Service Info → Configuration</> },
           { label: "Unlock method", value: <>Get unique code by email from <strong>Sony Developer site</strong> via IMEI</> },
