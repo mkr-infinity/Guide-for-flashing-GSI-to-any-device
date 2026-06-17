@@ -16,6 +16,7 @@ export default function Motorola() {
       <BrandSpec
         difficulty="Easy"
         difficultyNote="Best brand for first-time flashers"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Get unique unlock key by email from Motorola's official site</> },
           { label: "Get device ID", value: <><code>fastboot oem get_unlock_data</code> → paste on Motorola site</> },
