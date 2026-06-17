@@ -36,7 +36,7 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: /${{ github.event.repository.name }}/
+          BASE_PATH: ./
         run: pnpm run build:gh-pages
 
       - name: Setup Pages
