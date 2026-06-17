@@ -19,18 +19,18 @@ export default function Xiaomi() {
         lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Official <strong>Mi Unlock tool</strong> (Windows-only) after Mi Account binding</> },
-          { label: "Wait time", value: <>168 hours (7 days) minimum, sometimes 30 days for newer models</> },
+          { label: "Wait time", value: <>168 hours is common, but HyperOS-era accounts and regions can see longer waits or stricter quotas</> },
           { label: "Fastboot trigger", value: <><strong>Volume Down + Power</strong> from off — Mi Bunny screen</> },
           { label: "vbmeta partitions", value: <><code>vbmeta</code> + <code>vbmeta_system</code> + <code>vbmeta_vendor</code> (multi-partition)</> },
           { label: "Free space trick", value: <><code>fastboot delete-logical-partition product_a</code> often required</> },
-          { label: "Brick recovery", value: <><strong>EDL Mode</strong> + Mi Flash Tool (cable trick or test point)</> },
+          { label: "Brick recovery", value: <><strong>Mi Flash Tool</strong>; newer EDL restores may require an authorized Xiaomi account</> },
           { label: "Watch out for", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Anti-Rollback (ARB) — never flash an older firmware</span> },
         ]}
       />
 
       <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="The 7-day waiting game">
-          Xiaomi makes you wait 7–30 days after requesting bootloader unlock before they actually let you do it. There's no way around it. Plan ahead.
+          Xiaomi makes you wait after requesting bootloader unlock, and HyperOS-era policies can be stricter by account age, region, quota, and model. If Mi Unlock says to wait or rejects your account, do not trust random bypass APKs.
         </Callout>
 
         <h3>Step 1 — Get an unlock token from Xiaomi</h3>
@@ -76,7 +76,7 @@ fastboot reboot`}
 
         <h3>If something goes wrong</h3>
         <p>
-          Xiaomi devices are very recoverable thanks to <strong>EDL mode</strong> (Emergency Download Mode). If your phone won't boot at all, you can usually re-flash stock firmware via Mi Flash Tool while in EDL mode. Search "[your model] EDL flash" for the cable trick.
+          Xiaomi devices are recoverable with stock fastboot firmware when the bootloader still responds. EDL mode can restore deeper bricks, but many newer models require an authorized Xiaomi account, so do not rely on EDL as a guaranteed safety net.
         </p>
       </div>
     </div>
