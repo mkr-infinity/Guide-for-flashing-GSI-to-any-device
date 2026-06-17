@@ -16,6 +16,7 @@ export default function LG() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Easy on supported models, impossible on others"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Old <strong>LG Developer Site</strong> codes (still archived on XDA) for supported models</> },
           { label: "Flash tool", value: <><strong>LGUP</strong> + <strong>LG Bridge</strong> on Windows — not standard fastboot</> },
