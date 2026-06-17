@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 
 export function TopProgressBar() {
-  const [progress, setProgress] = useState(0);
   const springProgress = useSpring(0, { stiffness: 180, damping: 28, mass: 0.5 });
   const scaleX = useTransform(springProgress, (v) => v / 100);
   const dotLeft = useTransform(springProgress, (v) => `${v}%`);
@@ -16,7 +15,6 @@ export function TopProgressBar() {
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
-      setProgress(pct);
       springProgress.set(pct);
     };
 
