@@ -21,6 +21,7 @@ export default function Oppo() {
           { label: "OnePlus unlock", value: <><code>fastboot oem unlock</code> (older) or <code>fastboot flashing unlock</code> (OnePlus 8+)</> },
           { label: "Realme unlock", value: <><strong>Deep Testing app</strong> from realme.com — wait for approval</> },
           { label: "Oppo unlock", value: <span className="text-red-600 dark:text-red-400 font-medium">Mostly NOT supported — only old Find X2/X3 era</span> },
+          { label: "Newer OnePlus", value: <>Bootloader unlock may still work, but EDL/MSM unbrick access is less public and often auth-gated</> },
           { label: "vbmeta partitions", value: <><code>vbmeta</code> alone usually — OnePlus 9+ adds <code>vbmeta_system</code></> },
           { label: "Free space trick", value: <><code>fastboot delete-logical-partition product_a</code> for ColorOS 13+</> },
           { label: "Brick recovery (OP)", value: <><strong>MSMDownloadTool</strong> (XDA leaks) — full EDL restore</> },
@@ -30,7 +31,7 @@ export default function Oppo() {
 
       <div className="prose dark:prose-invert max-w-none">
         <Callout type="warning" title="Bootloader unlock support varies">
-          <strong>OnePlus</strong> phones are usually fully unlockable from Developer Options. <strong>Realme</strong> requires their "In-Depth Test" app to apply for unlock. <strong>Oppo</strong> mostly does <em>not</em> allow official bootloader unlocking — only a handful of older Oppo models (like Find X2/X3) let you do it. Check XDA for your specific model first.
+          <strong>OnePlus</strong> phones are usually unlockable from Developer Options, but carrier models and newer OPlus recovery paths can be restrictive. <strong>Realme</strong> requires their "In-Depth Test" app and approval can be region/model-limited. <strong>Oppo</strong> mostly does <em>not</em> allow official bootloader unlocking. Check XDA for your exact model first.
         </Callout>
 
         <h3>OnePlus (the easy one)</h3>
@@ -68,8 +69,8 @@ fastboot reboot`}
           Newer ColorOS/Realme UI releases use stricter partition layouts. If <code>fastboot flash system</code> fails with "partition too small", you may need to first run <code>fastboot delete-logical-partition product_a</code> (or <code>product_b</code> depending on your active slot) to make space.
         </Callout>
 
-        <Callout type="tip" title="OnePlus MSM Tool is your safety net">
-          For OnePlus, if anything goes catastrophically wrong, the <strong>MSMDownloadTool</strong> (leaks of it exist on XDA) can fully restore your phone from EDL mode. It's the closest thing to a "factory reset to brand new" button. Keep a copy handy.
+        <Callout type="warning" title="Do not assume MSMDownloadTool will save newer OnePlus phones">
+          Older OnePlus devices often had leaked MSMDownloadTool packages. Newer OPlus-era devices may need authenticated EDL access or model-specific payload flashing instead. Confirm the recovery method for your exact model before flashing.
         </Callout>
       </div>
     </div>
