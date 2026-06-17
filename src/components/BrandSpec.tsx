@@ -10,6 +10,7 @@ interface BrandSpecProps {
   rows: BrandSpecRow[];
   difficulty?: "Easy" | "Medium" | "Hard" | "Very Hard" | "Mostly Locked";
   difficultyNote?: string;
+  lastUpdated?: string;
 }
 
 const difficultyStyles: Record<string, string> = {
@@ -20,7 +21,7 @@ const difficultyStyles: Record<string, string> = {
   "Mostly Locked": "bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20",
 };
 
-export function BrandSpec({ rows, difficulty, difficultyNote }: BrandSpecProps) {
+export function BrandSpec({ rows, difficulty, difficultyNote, lastUpdated }: BrandSpecProps) {
   return (
     <Card className="not-prose mb-10 border-border bg-sidebar/50 shadow-sm overflow-hidden backdrop-blur-sm rounded-none">
       <CardContent className="p-0">
@@ -35,6 +36,12 @@ export function BrandSpec({ rows, difficulty, difficultyNote }: BrandSpecProps) 
             </div>
           )}
         </div>
+        {lastUpdated && (
+          <div className="border-b border-border/60 bg-primary/5 px-5 py-3 text-xs font-medium text-muted-foreground">
+            <span className="font-bold uppercase tracking-wider text-primary">Last updated:</span>{" "}
+            {lastUpdated}. Device policies change often, so confirm your exact model, region, and firmware before flashing.
+          </div>
+        )}
         <div className="divide-y divide-border/60">
           {rows.map((row) => (
             <div key={row.label} className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 px-5 py-3.5 text-sm transition-colors hover:bg-muted/30">
