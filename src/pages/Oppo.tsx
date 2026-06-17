@@ -16,6 +16,7 @@ export default function Oppo() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Varies wildly by sub-brand"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "OnePlus unlock", value: <><code>fastboot oem unlock</code> (older) or <code>fastboot flashing unlock</code> (OnePlus 8+)</> },
           { label: "Realme unlock", value: <><strong>Deep Testing app</strong> from realme.com — wait for approval</> },
