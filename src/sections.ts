@@ -195,6 +195,27 @@ export const SECTIONS: Section[] = [
     component: lazy(() => import("./pages/Commands")),
   },
   {
+    id: "tools",
+    path: "/tools",
+    group: "REFERENCE",
+    label: "Downloads & Tools",
+    component: lazy(() => import("./pages/Tools")),
+  },
+  {
+    id: "known-devices",
+    path: "/known-devices",
+    group: "REFERENCE",
+    label: "Known Device Notes",
+    component: lazy(() => import("./pages/KnownDevices")),
+  },
+  {
+    id: "device-report",
+    path: "/device-report",
+    group: "REFERENCE",
+    label: "Device Report Template",
+    component: lazy(() => import("./pages/DeviceReport")),
+  },
+  {
     id: "troubleshooting",
     path: "/troubleshooting",
     group: "REFERENCE",
