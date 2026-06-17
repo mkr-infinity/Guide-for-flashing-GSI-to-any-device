@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Bug, ExternalLink, Github, MessageCircle, Search, Send } from "lucide-react";
+import { Bug, Github, MessageCircle, Search, Send } from "lucide-react";
 
 export default function Community() {
   return (
