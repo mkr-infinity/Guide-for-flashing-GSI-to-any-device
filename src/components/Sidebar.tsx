@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { SECTIONS, Section, BRAND_ICONS } from "../sections";
 
+const logoUrl = `${import.meta.env.BASE_URL}logo.svg`;
+
 interface SidebarProps {
   activePath: string;
   isCollapsed: boolean;
@@ -28,7 +30,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
     <div className="flex flex-col h-full bg-sidebar border-r border-sidebar-border">
       {/* Header */}
       <div className="p-5 pb-4 flex items-center gap-3">
-        <img src="/logo.svg" alt="Logo" className="w-8 h-8 shrink-0" />
+        <img src={logoUrl} alt="Logo" className="w-8 h-8 shrink-0" />
         <div className="flex-1 min-w-0">
           <h2 className="text-base font-bold tracking-tight text-sidebar-foreground leading-tight truncate">
             GSI Flash Guide
@@ -163,7 +165,7 @@ export function Sidebar({ activePath, isCollapsed, setIsCollapsed }: SidebarProp
       {/* Desktop Sidebar — collapsed rail */}
       {isCollapsed && (
         <aside className="hidden lg:flex flex-col w-14 fixed inset-y-0 left-0 z-40 bg-sidebar border-r border-sidebar-border items-center pt-4 gap-4">
-          <img src="/logo.svg" alt="Logo" className="w-7 h-7" />
+          <img src={logoUrl} alt="Logo" className="w-7 h-7" />
           <button
             type="button"
             onClick={() => setIsCollapsed(false)}
