@@ -16,6 +16,7 @@ export default function MediaTek() {
       <BrandSpec
         difficulty="Medium"
         difficultyNote="Different toolchain entirely"
+        lastUpdated="June 17, 2026"
         rows={[
           { label: "Unlock method", value: <>Standard <code>fastboot flashing unlock</code> on most — but many MTK devices need <strong>SP Flash Tool</strong> first</> },
           { label: "Flash tool", value: <><strong>SP Flash Tool</strong> (SmartPhone Flash Tool) — replaces fastboot on most MTK devices</> },
