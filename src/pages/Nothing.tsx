@@ -22,6 +22,7 @@ export default function Nothing() {
           { label: "OEM Unlock toggle", value: <>Standard Developer Options → OEM Unlocking</> },
           { label: "vbmeta partitions", value: <><code>vbmeta</code> only — straightforward</> },
           { label: "Flash command", value: <>Standard fastbootd flow — no special tricks</> },
+          { label: "Firmware match", value: <>Keep stock vendor/firmware current and pick a GSI close to that Android generation</> },
           { label: "Brick recovery", value: <>Stock firmware available on Nothing's official support page</> },
           { label: "What you lose", value: <span className="text-amber-600 dark:text-amber-400 font-medium">Glyph customization UI (lights still work but can't fine-tune)</span> },
         ]}
@@ -65,6 +66,10 @@ fastboot reboot`}
 
         <Callout type="note" title="You'll lose Glyph customisation">
           The Glyph interface and Nothing OS-specific features (the dot-matrix UI, custom widgets) live inside Nothing OS. After flashing a GSI those go away. The lights still work for calls/charging via system notifications, but you lose the fine-grained control. Worth knowing.
+        </Callout>
+
+        <Callout type="tip" title="Keep vendor firmware current">
+          Nothing phones are friendly, but they still rely on stock vendor firmware for modem, camera, fingerprint, and Glyph behavior. Restore/update stock first if you are coming from a very old Nothing OS build, then flash the GSI.
         </Callout>
 
         <Callout type="tip" title="Phone (1) / (2) / (2a) firmware is on Nothing's site">
